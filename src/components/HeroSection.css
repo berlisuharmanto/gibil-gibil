@@ -1,0 +1,94 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.home_hero_row-01 {
+  display: flex;
+  background-image: url("https://raw.githubusercontent.com/berlisuharmanto/Images-Assets/main/home_row01.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home_hero_col-01 {
+  display: grid;
+  height: 500px;
+  width: 30%;
+  place-items: center;
+}
+
+.home_hero_col-01 .text-wrapper {
+  width: 362px;
+  color: #fff;
+}
+
+.home_hero_row-01 .text-wrapper b {
+  font-size: 32px;
+}
+
+.home_hero_row-01 .text-wrapper p {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+
+.home_hero_row-02 {
+  display: flex;
+  background-image: url("https://raw.githubusercontent.com/berlisuharmanto/Images-Assets/main/home_row02.png");
+  flex-direction: row;
+  text-align: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 72px;
+  height: 475px;
+}
+
+.home_hero_col-02 {
+  display: grid;
+  width: 35%;
+  place-items: center;
+}
+
+.home_hero_blank {
+  height: 472px;
+  width: 65%;
+}
+
+.home_hero_col-02 .text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 340px;
+}
+
+.home_hero_row-02 .text-wrapper b {
+  font-size: 20px;
+  color: #5d5fef;
+}
+
+.home_hero_row-02 .text-wrapper p {
+  padding-top: 15px;
+  padding-bottom: 25px;
+  font-size: 16px;
+  color: #000;
+}
+
+.home_hero_row-02 .text-wrapper a {
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  height: 50px;
+  width: 100px;
+  padding: 10px;
+  border: 1px solid #5d5fef;
+  border-radius: 10px;
+  color: #5d5fef;
+}
+
+.home_hero_row-02 a:hover {
+  background-color: #5d5fef;
+  color: #fff;
+  transition: 0.2s;
+}

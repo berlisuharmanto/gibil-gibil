@@ -15,22 +15,22 @@ function navbar() {
             </div>
             <ul>
               <li className="nav-item">
-                <Link className="nav-links" href="#">
+                <Link className="nav-links" to="/">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-links" href="#">
+                <Link className="nav-links" to="/">
                   Trend
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-links" href="#">
+                <Link className="nav-links" to="/">
                   Bundle
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-links" href="#">
+                <Link className="nav-links" to="/">
                   Purchase
                 </Link>
               </li>
@@ -39,17 +39,17 @@ function navbar() {
 
           <ul>
             <li className="nav-button">
-              <Link className="button-links" href="#">
+              <Link className="button-links" to="/">
                 Sign In
               </Link>
             </li>
             <li>
-              <Link className="icon" href="#">
+              <Link className="icon" to="/">
                 <img src={process.env.PUBLIC_URL + "/cart.svg"} />{" "}
               </Link>
             </li>
             <li>
-              <Link className="icon" href="#">
+              <Link className="icon" to="/">
                 <img src={process.env.PUBLIC_URL + "/gear.svg"} />{" "}
               </Link>
             </li>

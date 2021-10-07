@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
@@ -8,9 +9,9 @@ function Footer() {
         <div className="col col-01">
           <ul>
             <li>
-              <a href="#" className="footer-links">
+              <Link to="/" className="footer-links">
                 <b>Gibil - Gibil</b>
-              </a>
+              </Link>
             </li>
             <li>
               <div className="text-wrapper">
@@ -25,19 +26,19 @@ function Footer() {
               <b>Follow</b>
             </li>
             <li>
-              <a href="#" className="footer-links">
+              <Link to="/" className="footer-links">
                 Twitter
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="footer-links">
+              <Link to="/" className="footer-links">
                 Facebook
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="footer-links">
+              <Link to="/" className="footer-links">
                 Instagram
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -59,14 +60,14 @@ function Footer() {
               <b>Legal</b>
             </li>
             <li>
-              <a href="#" className="footer-links">
+              <Link to="/" className="footer-links">
                 Terms
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="footer-links">
+              <Link to="/" className="footer-links">
                 Privacy
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -76,19 +77,19 @@ function Footer() {
               <b>Explore</b>
             </li>
             <li>
-              <a href="#" className="footer-links">
+              <Link to="/" className="footer-links">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="footer-links">
+              <Link to="/" className="footer-links">
                 Trend
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="footer-links">
+              <Link to="/" className="footer-links">
                 Instagram
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
