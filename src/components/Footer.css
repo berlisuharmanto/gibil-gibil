@@ -1,0 +1,39 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  background-color: #5d5fef;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  padding: 60px 75px 30px 75px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.col ul {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+ul li {
+  padding: 5px 0 5px 0;
+}
+
+.col a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.col-01 b {
+  font-size: 32px;
+}
+
+.col-06 {
+  padding-top: 100px;
+}
+
+.text-wrapper {
+  width: 177px;
+}
