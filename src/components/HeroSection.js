@@ -16,7 +16,7 @@ function HeroSection({ homeTitle01, homeDesc01, homeTitle02, homeDesc02 }) {
       <div className="hero home_hero_row-02">
         <div className="home_hero_blank"></div>
         <div className="home_hero_col-02">
-          <img src={process.env.PUBLIC_URL + "/cupang.png"} />{" "}
+          <img src={process.env.PUBLIC_URL + "images/cupang.png"} />{" "}
           <div className="text-wrapper">
             <b>{homeTitle02}</b>
             <p>{homeDesc02}</p>

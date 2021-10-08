@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 function navbar() {
@@ -7,32 +7,48 @@ function navbar() {
     <>
       <nav>
         <div className="navbar-container">
-          <div className="apalah">
+          <div className="nav-con">
             <div className="menu-icon">
-              <Link className="navbar-logo" to="/">
+              <NavLink className="navbar-logo" to="/home">
                 <img src={process.env.PUBLIC_URL + "/Logo.svg"} />{" "}
-              </Link>
+              </NavLink>
             </div>
             <ul>
               <li className="nav-item">
-                <Link className="nav-links" to="/">
+                <NavLink
+                  className="nav-links"
+                  activeClassName="main-nav-active"
+                  to="/home"
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-links" to="/">
+                <NavLink
+                  className="nav-links"
+                  activeClassName="main-nav-active"
+                  to="/trend"
+                >
                   Trend
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-links" to="/">
+                <NavLink
+                  className="nav-links"
+                  activeClassName="main-nav-active"
+                  to="/bundle"
+                >
                   Bundle
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-links" to="/">
+                <NavLink
+                  className="nav-links"
+                  activeClassName="main-nav-active"
+                  to="/purchase"
+                >
                   Purchase
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -45,12 +61,12 @@ function navbar() {
             </li>
             <li>
               <Link className="icon" to="/">
-                <img src={process.env.PUBLIC_URL + "/cart.svg"} />{" "}
+                <img src={process.env.PUBLIC_URL + "images/cart.svg"} />{" "}
               </Link>
             </li>
             <li>
               <Link className="icon" to="/">
-                <img src={process.env.PUBLIC_URL + "/gear.svg"} />{" "}
+                <img src={process.env.PUBLIC_URL + "images/gear.svg"} />{" "}
               </Link>
             </li>
           </ul>

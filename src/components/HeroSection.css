@@ -45,13 +45,13 @@
 
 .home_hero_col-02 {
   display: grid;
-  width: 35%;
+  width: 50%;
   place-items: center;
 }
 
 .home_hero_blank {
   height: 472px;
-  width: 65%;
+  width: 50%;
 }
 
 .home_hero_col-02 .text-wrapper {

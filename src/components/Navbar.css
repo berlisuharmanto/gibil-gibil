@@ -6,6 +6,7 @@ nav {
   font-size: 24px;
   font-weight: 700;
   background-color: #fff;
+  z-index: 5;
 }
 
 nav ul {
@@ -32,7 +33,7 @@ nav li {
   height: 65px;
 }
 
-.apalah {
+.nav-con {
   display: flex;
 }
 
@@ -50,7 +51,7 @@ nav li {
   transition: 0.2s;
 }
 
-.active {
+.main-nav-active {
   background-color: #7879f1;
   color: #fff;
 }
