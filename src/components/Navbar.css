@@ -2,6 +2,7 @@ nav {
   top: 0;
   display: flex;
   position: sticky;
+  border-bottom: 0.1px solid #5d5fef;
   justify-content: center;
   font-size: 24px;
   font-weight: 700;
@@ -43,12 +44,12 @@ nav li {
 
 .button-links {
   margin-left: 225px;
+  transition: 0.2s;
 }
 
 .button-links:hover,
 .icon:hover {
   color: #7879f1;
-  transition: 0.2s;
 }
 
 .main-nav-active {

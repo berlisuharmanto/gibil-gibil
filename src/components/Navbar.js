@@ -9,7 +9,7 @@ function navbar() {
         <div className="navbar-container">
           <div className="nav-con">
             <div className="menu-icon">
-              <NavLink className="navbar-logo" to="/home">
+              <NavLink className="navbar-logo" to="/">
                 <img src={process.env.PUBLIC_URL + "/Logo.svg"} />{" "}
               </NavLink>
             </div>

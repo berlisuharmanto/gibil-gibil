@@ -54,23 +54,6 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="col col-04">
-          <ul>
-            <li>
-              <b>Legal</b>
-            </li>
-            <li>
-              <Link to="/" className="footer-links">
-                Terms
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="footer-links">
-                Privacy
-              </Link>
-            </li>
-          </ul>
-        </div>
         <div className="col col-05">
           <ul>
             <li>
@@ -88,7 +71,7 @@ function Footer() {
             </li>
             <li>
               <Link to="/" className="footer-links">
-                Instagram
+                Purchase
               </Link>
             </li>
           </ul>
