@@ -1,5 +1,5 @@
 import React from "react";
-import HeroArticle from "../../HeroArticle";
+import HeroArticle from "../HeroArticle";
 import { articleContent } from "./Data";
 
 function Article() {

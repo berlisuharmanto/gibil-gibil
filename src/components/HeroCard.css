@@ -15,6 +15,19 @@
   flex-direction: row;
 }
 
+.card_col01,
+.card_col02,
+.card_col03 {
+  transition: 0.2s;
+}
+
+.card_col01:hover,
+.card_col02:hover,
+.card_col03:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
 .hero_card_container .card_row01 .card_col01 {
   display: flex;
   justify-content: center;

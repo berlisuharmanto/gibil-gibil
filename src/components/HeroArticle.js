@@ -1,5 +1,5 @@
 import React from "react";
-import { asideContent } from "./components/pages/Data";
+import { asideContent } from "./pages/Data";
 import "./HeroArticle.css";
 import HeroAside from "./HeroAside";
 

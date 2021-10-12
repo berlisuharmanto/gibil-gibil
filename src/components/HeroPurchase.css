@@ -1,0 +1,90 @@
+.hero_purchase_group {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.hero_purchase_container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.hero_purchase_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  width: 200px;
+  height: 60px;
+  background-color: #7879f1;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.hero_purchase_header:hover {
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hero_purchase_group .control-dots {
+  margin: 0;
+}
+
+.hero_purchase_list {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
+
+.hero_purchase_list .hero_purchase_row {
+  display: flex;
+}
+
+.hero_purchase_list .img-container {
+  position: relative;
+  margin: 15px 15px 15px 0;
+  height: 112px;
+}
+
+.hero_purchase_list .img-container .img-hover {
+  position: absolute;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+  font-size: 20px;
+  color: #fff;
+}
+
+.hero_purchase_list .img-container:hover .img-hover {
+  opacity: 1;
+}
+
+.carousel.carousel-purchase .control-arrow,
+.carousel .carousel-status {
+  display: none;
+}
+
+.carousel .control-dots .dot {
+  background-color: #c4c4c4;
+  border-radius: 5px;
+  box-shadow: none;
+  width: 80px;
+  height: 20px;
+}
+
+.hero_purchase_container .carousel-purchase {
+  height: 200px;
+}
+
+.hero_purchase_container .carousel .control-dots {
+  margin-bottom: 0;
+}

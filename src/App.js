@@ -4,7 +4,9 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Article from "./components/pages/Article";
 import Bundle from "./components/pages/Bundle";
+import DetailPurchase from "./components/pages/DetailPurchase";
 import Home from "./components/pages/Home";
+import Purchase from "./components/pages/Purchase";
 import Trend from "./components/pages/Trend";
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Route path="/trend" exact component={Trend} />
         <Route path="/article" exact component={Article} />
         <Route path="/bundle" exact component={Bundle} />
+        <Route path="/purchase" exact component={Purchase} />
+        <Route path="/detailpurchase" exact component={DetailPurchase} />
       </Switch>
       <Footer />
     </Router>

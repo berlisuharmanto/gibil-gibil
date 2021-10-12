@@ -77,7 +77,7 @@ function HeroCard({
                   <b className="available">{d16}</b>
                   <b className="price">{d17}</b>
                 </div>
-                <Link to="/">Buy</Link>
+                <Link to="/detailpurchase">Buy</Link>
               </div>
             </div>
             <div className="card_col02">
@@ -93,7 +93,7 @@ function HeroCard({
                   <b className="available">{d26}</b>
                   <b className="price">{d27}</b>
                 </div>
-                <Link to="/">Buy</Link>
+                <Link to="/detailpurchase">Buy</Link>
               </div>
             </div>
             <div className="card_col03">
@@ -109,7 +109,7 @@ function HeroCard({
                   <b className="available">{d36}</b>
                   <b className="price">{d37}</b>
                 </div>
-                <Link to="/">Buy</Link>
+                <Link to="/detailpurchase">Buy</Link>
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@ function HeroCard({
                   <b className="available">{d46}</b>
                   <b className="price">{d47}</b>
                 </div>
-                <Link to="/">Buy</Link>
+                <Link to="/detailpurchase">Buy</Link>
               </div>
             </div>
             <div className="card_col02">
@@ -143,7 +143,7 @@ function HeroCard({
                   <b className="available">{d56}</b>
                   <b className="price">{d57}</b>
                 </div>
-                <Link to="/">Buy</Link>
+                <Link to="/detailpurchase">Buy</Link>
               </div>
             </div>
             <div className="card_col03">
@@ -159,7 +159,7 @@ function HeroCard({
                   <b className="available">{d66}</b>
                   <b className="price">{d67}</b>
                 </div>
-                <Link to="/">Buy</Link>
+                <Link to="/detailpurchase">Buy</Link>
               </div>
             </div>
           </div>
