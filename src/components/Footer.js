@@ -60,17 +60,17 @@ function Footer() {
               <b>Explore</b>
             </li>
             <li>
-              <Link to="/" className="footer-links">
+              <Link to="/home" className="footer-links">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/" className="footer-links">
+              <Link to="/trend" className="footer-links">
                 Trend
               </Link>
             </li>
             <li>
-              <Link to="/" className="footer-links">
+              <Link to="/purchase" className="footer-links">
                 Purchase
               </Link>
             </li>

@@ -1,6 +1,13 @@
 import React from "react";
 import "./HeroVariation.css";
 
+const addToCart = (e) => {
+  const cart = [];
+  const items = [{ name: "Berli" }, { name: "Suharmanto" }];
+  cart.push(items);
+  console.log(cart);
+};
+
 function HeroVariation({ size1, size2, size3, size4, size5, size6 }) {
   return (
     <>
@@ -20,7 +27,7 @@ function HeroVariation({ size1, size2, size3, size4, size5, size6 }) {
             </div>
           </fieldset>
           <div className="transaction">
-            <button>Add to cart</button>
+            <button onClick={(e) => addToCart(e)}>Add to cart</button>
             <button>Buy Now</button>
           </div>
         </div>

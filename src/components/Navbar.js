@@ -3,6 +3,10 @@ import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 function navbar() {
+  const isLoaded = true;
+  if (window.location.pathname.match("/signin")) {
+    return null;
+  }
   return (
     <>
       <nav>
@@ -55,7 +59,7 @@ function navbar() {
 
           <ul>
             <li className="nav-button">
-              <Link className="button-links" to="/">
+              <Link className="button-links" to="/signin">
                 Sign In
               </Link>
             </li>
