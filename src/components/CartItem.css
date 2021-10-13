@@ -1,11 +1,17 @@
 .container-items {
-  width: 80%;
-}
-.container-form form {
   display: flex;
   flex-direction: row;
-  margin-left: 12rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
+
+.container-form .container_box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
 .container-checkbox {
   width: 150px;
   display: grid;
@@ -38,6 +44,13 @@
   font-size: 16px;
   font-weight: bold;
   padding-bottom: 1rem;
+}
+
+.container-amount button {
+  display: flex;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .container-option {
@@ -85,4 +98,8 @@
 .container-remove img {
   width: 36px;
   height: 40px;
+}
+
+.container-amount .amount-number {
+  color: #fff;
 }

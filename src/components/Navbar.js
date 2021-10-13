@@ -1,12 +1,8 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 function navbar() {
-  const isLoaded = true;
-  if (window.location.pathname.match("/signin")) {
-    return null;
-  }
   return (
     <>
       <nav>

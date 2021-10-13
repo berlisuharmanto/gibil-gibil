@@ -1,18 +1,31 @@
+.container-button-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 50px 0;
+}
+
 .container-cart-btn {
-  width: 70%;
+  width: 55%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 15rem;
-  margin-right: 15rem;
 }
 .container-cart-btn button {
   width: 157px;
   height: 70px;
   border-radius: 10px;
   background-color: #7879f1;
+  border: none;
+  transition: 0.2s;
+  cursor: pointer;
 }
 .container-cart-btn button h1 {
   color: #ffffff;
   font-size: 20px;
+}
+
+.container-cart-btn button:hover {
+  background-color: #5d5fef;
 }
