@@ -204,3 +204,13 @@ export const recommendation = {
   price4: "Rp 30.000",
   price5: "Rp 100.000",
 };
+
+export const items = {
+  img : "images/items/medias/Frame 13.png",
+  title: "Aquarium pump",
+  variation: "black",
+  note: "Jangan dibanting",
+  plusIcon: "images/plus.svg",
+  minusIcon: "images/minus.svg",
+  removeIcon: "images/remove.svg"
+};
