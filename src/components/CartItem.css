@@ -1,0 +1,88 @@
+.container-items {
+  width: 80%;
+}
+.container-form form {
+  display: flex;
+  flex-direction: row;
+  margin-left: 12rem;
+}
+.container-checkbox {
+  width: 150px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.container-checkbox input {
+  width: 32px;
+  height: 32px;
+}
+.container-image img {
+  width: 175px;
+  height: 135px;
+}
+.container-descrip {
+  width: 480px;
+  margin-left: 3rem;
+  padding-top: 1rem;
+}
+
+.container-form .container-descrip h1 {
+  font-size: 32px;
+  padding-bottom: 1rem;
+}
+.container-form .container-descrip h2 {
+  font-size: 20px;
+  padding-bottom: 1rem;
+}
+.container-form .container-descrip p {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.container-option {
+  display: flex;
+  align-items: center;
+}
+
+.container-amount {
+  width: 300px;
+  display: grid;
+  align-items: center;
+  margin-right: 2rem;
+}
+.container-inline {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.container-amount .amount-icon {
+  width: 44px;
+  height: 40px;
+  margin-right: 2.5rem;
+}
+.container-amount .amount-number {
+  width: 58px;
+  height: 40px;
+  background-color: #bababa;
+  color: #5d5fef;
+  text-align: center;
+  margin-right: 2.5rem;
+}
+.container-amount .amount-number h1 {
+  height: 40px;
+  font-size: 32px;
+}
+
+.container-amount .container-price {
+  margin-top: 1rem;
+}
+
+.container-amount .container-price h1 {
+  font-size: 24px;
+}
+
+.container-remove img {
+  width: 36px;
+  height: 40px;
+}
