@@ -1,0 +1,32 @@
+.hero_banner_container {
+  display: flex;
+  background-image: url("https://raw.githubusercontent.com/berlisuharmanto/Images-Assets/main/trendBanner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  place-content: center;
+  height: 570px;
+  width: 100%;
+}
+
+.hero_banner_container .hero_banner_row {
+  display: grid;
+  text-align: center;
+}
+
+.hero_banner_container .hero_banner_row .text-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+  justify-content: center;
+  padding: 200px 0 10px 0;
+  color: #fff;
+}
+
+.hero_banner_container .hero_banner_row .text-wrapper b {
+  font-size: 32px;
+}
+
+.hero_banner_container .hero_banner_row .text-wrapper p {
+  padding-top: 20px;
+  font-size: 28px;
+}
