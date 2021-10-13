@@ -29,3 +29,9 @@
 .container-cart-btn button:hover {
   background-color: #5d5fef;
 }
+
+@media screen and (max-width: 1366px) {
+  .container-button-cart {
+    transform: scale(0.8);
+  }
+}

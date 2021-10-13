@@ -49,3 +49,9 @@
 .hero_variation_main .variation_container .transaction button:hover {
   background-color: #5d5fef;
 }
+
+@media screen and (max-width: 1366px) {
+  .hero_variation_main .variation_container {
+    padding-right: 200px;
+  }
+}

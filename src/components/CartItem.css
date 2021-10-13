@@ -103,3 +103,9 @@
 .container-amount .amount-number {
   color: #fff;
 }
+
+@media screen and (max-width: 1366px) {
+  .container-items {
+    transform: scale(0.8);
+  }
+}

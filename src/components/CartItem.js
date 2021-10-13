@@ -12,6 +12,18 @@ function CartItem({
 }) {
   const [counter, setCounter] = useState(0);
 
+  const decrement = () => {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
+  };
+
+  const increment = () => {
+    if (counter < 100) {
+      setCounter(counter + 1);
+    }
+  };
+
   return (
     <>
       <div className="container-items">
@@ -31,19 +43,13 @@ function CartItem({
             <div className="container-option">
               <div className="container-amount">
                 <div className="container-inline">
-                  <button
-                    onClick={() => setCounter(counter - 1)}
-                    className="amount-icon"
-                  >
+                  <button onClick={decrement} className="amount-icon">
                     <img src={minusIcon} />
                   </button>
                   <div className="amount-number">
                     <h1>{counter}</h1>
                   </div>
-                  <button
-                    onClick={() => setCounter(counter + 1)}
-                    className="amount-icon"
-                  >
+                  <button onClick={increment} className="amount-icon">
                     <img src={plusIcon} />
                   </button>
                   <button className="remove-icon">

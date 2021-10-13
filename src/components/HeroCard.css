@@ -380,3 +380,10 @@
 .hero_card_container .card_row02 .card_col03 a:hover {
   transform: scale(1.05);
 }
+
+@media screen and (max-width: 1366px) {
+  .hero_card_main {
+    margin: -160px 0;
+    transform: scale(0.8);
+  }
+}

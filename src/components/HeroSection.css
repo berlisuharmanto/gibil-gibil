@@ -37,7 +37,7 @@
   background-image: url("https://raw.githubusercontent.com/berlisuharmanto/Images-Assets/main/home_row02.png");
   flex-direction: row;
   text-align: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   padding-top: 72px;
   height: 475px;
@@ -91,4 +91,14 @@
 .home_hero_row-02 a:hover {
   background-color: #5d5fef;
   color: #fff;
+}
+
+@media screen and (max-width: 1366px) {
+  .home_hero_row-01 {
+    height: 375px;
+  }
+
+  .home_hero_row-02 {
+    height: 375px;
+  }
 }
