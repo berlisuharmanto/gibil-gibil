@@ -20,7 +20,7 @@ function HeroSection({ homeTitle01, homeDesc01, homeTitle02, homeDesc02 }) {
           <div className="text-wrapper">
             <b>{homeTitle02}</b>
             <p>{homeDesc02}</p>
-            <Link to="/" className="button">
+            <Link to="/bundle" className="button">
               Explore
             </Link>
           </div>
