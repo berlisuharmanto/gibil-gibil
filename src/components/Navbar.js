@@ -25,7 +25,8 @@ function Navbar() {
                 <NavLink
                   className="nav-links"
                   activeClassName="main-nav-active"
-                  to="/home"
+                  exact
+                  to="/"
                 >
                   Home
                 </NavLink>

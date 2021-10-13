@@ -88,3 +88,13 @@
 .hero_purchase_container .carousel .control-dots {
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 1366px) {
+  .hero_purchase_list {
+    height: 230px;
+  }
+
+  .hero_purchase_list .img-container {
+    height: 75px;
+  }
+}
