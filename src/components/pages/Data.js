@@ -5,6 +5,15 @@ export const homeObjOne = {
   homeDesc02: "You can choose the style of your dreamed aquarium in here",
 };
 
+export const settingObj = {
+  settingsTitle: "General Account Settings",
+  settingsCont01: "Name",
+  settingsCont02: "Password",
+  settingsCont03: "Address",
+  settingsCont04: "Payment Method",
+  no_account: "No. Account"
+};
+
 export const trendObjTwo = {
   header: "Instagramable Design",
   img01: "images/img01.png",
