@@ -80,6 +80,7 @@ function Navbar() {
               </li>
             </ul>
           </div>
+
           <div className="menu-toggle">
             <input type="checkbox" />
             <span></span>

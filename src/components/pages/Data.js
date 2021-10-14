@@ -43,6 +43,28 @@ export const trendCarousel = {
   desc01: "Gibil-gibil",
 };
 
+export const FormObject1 = {
+  img: "images/bg-sign-in.png",
+  spanText: "images/or.svg",
+  title1: "Sign In",
+  title2: "Input Your Account",
+  emailLabel: "Email",
+  passLabel: "Password",
+  button1: "Sign In",
+  button2: "Create Account"
+};
+
+export const FormObject2 = {
+  img: "./Logo.svg",
+  title1: "Sign Up",
+  NameLabel: "Name",
+  EmailLabel: "Email",
+  PhoneNumber: "Phone Number",
+  passLabel: "Password",
+  passConfirmation: "Password Confirmation",
+  button1: "Create Account"
+};
+
 export const articleContent = {
   mainTitle: "7 Ide Hiasan Aquarium Cantik yang Murah Meriah",
   article01: `Hobi memelihara ikan adalah salah satu kesenangan pribadi yang sering diasosiasikan dengan pengeluaran besar. Bagaimana tidak? Selain harga ikan peliharaan yang bisa berjuta-juta harganya, masih ada juga aspek pemeliharaan yang rutin dan hiasan aquarium yang tidak ada habisnya. Seringkali, banyak yang menghentikan hobi memelihara ikan setengah jalan karena biaya pemeliharaan dan keinginan dekorasi yang menguras kantong.
