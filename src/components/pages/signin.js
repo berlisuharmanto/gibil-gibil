@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 import FormSignIn from "../FormSignIn";
-import {FormObject1} from "./Data";
+import { FormObject1 } from "./Data";
 
-function signin() {
-    return (
-        <FormSignIn {...FormObject1}/>
-    )
+function SignIn() {
+  return <FormSignIn {...FormObject1} />;
 }
 
-export default signin
+export default SignIn;

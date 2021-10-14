@@ -44,14 +44,15 @@ export const trendCarousel = {
 };
 
 export const FormObject1 = {
-  img: "images/bg-sign-in.png",
+  img: "images/SignInBanner.png",
   spanText: "images/or.svg",
   title1: "Sign In",
   title2: "Input Your Account",
   emailLabel: "Email",
   passLabel: "Password",
   button1: "Sign In",
-  button2: "Create Account"
+  button2: "Create Account",
+  logo: "images/logo.png",
 };
 
 export const FormObject2 = {
@@ -62,7 +63,8 @@ export const FormObject2 = {
   PhoneNumber: "Phone Number",
   passLabel: "Password",
   passConfirmation: "Password Confirmation",
-  button1: "Create Account"
+  button1: "Create Account",
+  bg: "images/SignUpBanner.png",
 };
 
 export const articleContent = {
