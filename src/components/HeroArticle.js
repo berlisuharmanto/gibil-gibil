@@ -3,13 +3,25 @@ import { asideContent } from "./pages/Data";
 import "./HeroArticle.css";
 import HeroAside from "./HeroAside";
 
-function HeroArticle({ mainTitle, article01, article02, img, subTitle }) {
+function HeroArticle({
+  mainTitle,
+  article01,
+  article02,
+  img,
+  subTitle,
+  banner,
+}) {
   return (
     <>
       <div className="hero_article_main">
         <div className="hero_related_article"></div>
         <div className="hero_article_content">
-          <div className="hero_article_banner"></div>
+          <div
+            className="hero_article_banner"
+            style={{
+              backgroundImage: `url(${banner})`,
+            }}
+          ></div>
           <div className="hero_article_core">
             <div className="text-wrapper">
               <h1 className="article_title">{mainTitle}</h1>

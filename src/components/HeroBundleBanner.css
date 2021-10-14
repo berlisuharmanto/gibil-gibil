@@ -1,7 +1,6 @@
 .hero_bundle_banner_container {
   display: flex;
   justify-content: center;
-  background-image: url("https://raw.githubusercontent.com/berlisuharmanto/Images-Assets/main/bundleBanner.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 860px;

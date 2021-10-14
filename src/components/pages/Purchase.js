@@ -1,12 +1,12 @@
 import React from "react";
 import HeroPurchase from "../HeroPurchase";
 import HeroPurchaseBanner from "../HeroPurchaseBanner";
-import { accessories, medias } from "./Data";
+import { accessories, medias, purchaseBanner } from "./Data";
 
 function Purchase() {
   return (
     <>
-      <HeroPurchaseBanner />
+      <HeroPurchaseBanner {...purchaseBanner} />
       <HeroPurchase {...accessories} />
       <HeroPurchase {...medias} />
     </>

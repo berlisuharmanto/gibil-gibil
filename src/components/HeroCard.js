@@ -6,7 +6,6 @@ function HeroCard({
   imgSC,
   imgDA,
   imgCA,
-  imgCC,
   imgFC,
   imgFS,
   imgTC,
@@ -58,13 +57,24 @@ function HeroCard({
   d65,
   d66,
   d67,
+  bg01,
+  bg02,
+  bg03,
+  bg04,
+  bg05,
+  bg06,
 }) {
   return (
     <>
       <div className="hero_card_main">
         <div className="hero_card_container">
           <div className="card_row01">
-            <div className="card_col01">
+            <div
+              className="card_col01"
+              style={{
+                backgroundImage: `url(${bg01})`,
+              }}
+            >
               <div className="card_content">
                 <img src={imgSC} alt={imgSC} />
                 <div className="text-wrapper">
@@ -80,7 +90,12 @@ function HeroCard({
                 <Link to="/detailpurchase">Buy</Link>
               </div>
             </div>
-            <div className="card_col02">
+            <div
+              className="card_col02"
+              style={{
+                backgroundImage: `url(${bg02})`,
+              }}
+            >
               <div className="card_content">
                 <img src={imgDA} alt={imgDA} />
                 <div className="text-wrapper">
@@ -96,7 +111,12 @@ function HeroCard({
                 <Link to="/detailpurchase">Buy</Link>
               </div>
             </div>
-            <div className="card_col03">
+            <div
+              className="card_col03"
+              style={{
+                backgroundImage: `url(${bg03})`,
+              }}
+            >
               <div className="card_content">
                 <img src={imgCA} alt={imgCA} />
                 <div className="text-wrapper">
@@ -114,7 +134,12 @@ function HeroCard({
             </div>
           </div>
           <div className="card_row02">
-            <div className="card_col01">
+            <div
+              className="card_col01"
+              style={{
+                backgroundImage: `url(${bg04})`,
+              }}
+            >
               <div className="card_content">
                 <img src={imgFC} alt={imgFC} />
                 <div className="text-wrapper">
@@ -130,7 +155,12 @@ function HeroCard({
                 <Link to="/detailpurchase">Buy</Link>
               </div>
             </div>
-            <div className="card_col02">
+            <div
+              className="card_col02"
+              style={{
+                backgroundImage: `url(${bg05})`,
+              }}
+            >
               <div className="card_content">
                 <img src={imgFS} alt={imgFS} />
                 <div className="text-wrapper">
@@ -146,7 +176,12 @@ function HeroCard({
                 <Link to="/detailpurchase">Buy</Link>
               </div>
             </div>
-            <div className="card_col03">
+            <div
+              className="card_col03"
+              style={{
+                backgroundImage: `url(${bg06})`,
+              }}
+            >
               <div className="card_content">
                 <img src={imgTC} alt={imgTC} />
                 <div className="text-wrapper">

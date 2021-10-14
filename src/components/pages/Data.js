@@ -3,6 +3,8 @@ export const homeObjOne = {
   homeDesc01: "Choose your first aquarium design and get 2.5% off",
   homeTitle02: "Freely Design Your Aquarium",
   homeDesc02: "You can choose the style of your dreamed aquarium in here",
+  bg01: "images/home_row01.png",
+  bg02: "images/home_row02.png",
 };
 
 export const trendObjTwo = {
@@ -33,6 +35,7 @@ export const trendBanner = {
   img: "images/trendBanner.png",
   title: "Expand your ideas",
   desc: "You can find the best tips for you here as a beginner or even intermediate aquarium stylist",
+  banner: "images/trendBanner.png",
 };
 
 export const trendCarousel = {
@@ -50,6 +53,7 @@ export const articleContent = {
   Hiasan aquarium jenis plastik juga umumnya relatif murah dan bisa didapatkan mulai dari harga kira-kira Rp 20.000 saja. Hanya saja, kamu harus lebih memastikan kualitas hiasan aquarium dari bahan plastik karena ada beberapa jenis hiasan aquarium plastik yang tidak begitu ideal digunakan, misanya hiasan plastik yang memiliki unsur metal di dalamnya yang bisa berkarat dan membahayakan kesehatan ikan. Dengan hiasan aquarium dari bahan plastik yang tepat, kegiatan memelihara ikan hias dijamin semakin asyik!`,
   subTitle: "1. Hiasan Aquarium Plastik Bikin Asyik",
   img: "images/articleBS.png",
+  banner: "images/articleBanner.png",
 };
 
 export const asideContent = {
@@ -66,6 +70,7 @@ export const bundleBanner = {
   desc01: `Confused on how to build an aquarium?`,
   desc02: `Pick one from our list of personalized Aquarium Kits
   and you’re good to go !`,
+  banner: "images/bundleBanner.png",
 };
 
 export const bundleCard = {
@@ -75,6 +80,12 @@ export const bundleCard = {
   imgFC: "images/FC.png",
   imgFS: "images/FS.png",
   imgTC: "images/TC.png",
+  bg01: "images/SCbg.png",
+  bg02: "images/DAbg.png",
+  bg03: "images/CAbg.png",
+  bg04: "images/FCbg.png",
+  bg05: "images/FSbg.png",
+  bg06: "images/TCbg.png",
   title01: "Simple & Clean",
   title02: "Deck Aquascape",
   title03: "Wooden Cabinet Aquarium",
@@ -162,6 +173,10 @@ export const medias = {
   desc04: "Gibil-gibil",
 };
 
+export const purchaseBanner = {
+  banner: "images/purchaseBanner.png",
+};
+
 export const detailPurchase = {
   img: "images/flex.png",
   title: "Fluval Flex Marine Aquarium",
@@ -206,11 +221,11 @@ export const recommendation = {
 };
 
 export const items = {
-  img : "images/items/medias/Frame 13.png",
+  img: "images/items/medias/Frame 13.png",
   title: "Aquarium pump",
   variation: "black",
   note: "Jangan dibanting",
   plusIcon: "images/plus.svg",
   minusIcon: "images/minus.svg",
-  removeIcon: "images/remove.svg"
+  removeIcon: "images/remove.svg",
 };

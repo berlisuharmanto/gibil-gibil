@@ -69,7 +69,7 @@ function Footer() {
                 <b>Explore</b>
               </li>
               <li>
-                <Link to="/home" className="footer-links">
+                <Link to="/" className="footer-links">
                   Home
                 </Link>
               </li>
