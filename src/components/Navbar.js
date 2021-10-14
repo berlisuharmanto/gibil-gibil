@@ -55,7 +55,7 @@ function navbar() {
 
           <ul>
             <li className="nav-button">
-              <Link className="button-links" to="/">
+              <Link className="button-links" to="/signin">
                 Sign In
               </Link>
             </li>

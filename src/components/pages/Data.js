@@ -39,3 +39,25 @@ export const trendCarousel = {
   img01: "images/carousel.png",
   desc01: "Gibil-gibil",
 };
+
+export const FormObject1 = {
+  img: "images/bg-sign-in.png",
+  spanText: "images/or.svg",
+  title1: "Sign In",
+  title2: "Input Your Account",
+  emailLabel: "Email",
+  passLabel: "Password",
+  button1: "Sign In",
+  button2: "Create Account"
+};
+
+export const FormObject2 = {
+  img: "./Logo.svg",
+  title1: "Sign Up",
+  NameLabel: "Name",
+  EmailLabel: "Email",
+  PhoneNumber: "Phone Number",
+  passLabel: "Password",
+  passConfirmation: "Password Confirmation",
+  button1: "Create Account"
+};
