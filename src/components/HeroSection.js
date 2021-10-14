@@ -2,10 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./HeroSection.css";
 
-function HeroSection({ homeTitle01, homeDesc01, homeTitle02, homeDesc02 }) {
+function HeroSection({
+  homeTitle01,
+  homeDesc01,
+  homeTitle02,
+  homeDesc02,
+  bg01,
+  bg02,
+}) {
   return (
     <>
-      <div className="hero home_hero_row-01">
+      <div
+        className="hero home_hero_row-01"
+        style={{
+          backgroundImage: `url(${bg01})`,
+        }}
+      >
         <div className="home_hero_col-01">
           <div className="text-wrapper">
             <b>{homeTitle01}</b>
@@ -13,14 +25,19 @@ function HeroSection({ homeTitle01, homeDesc01, homeTitle02, homeDesc02 }) {
           </div>
         </div>
       </div>
-      <div className="hero home_hero_row-02">
+      <div
+        className="hero home_hero_row-02"
+        style={{
+          backgroundImage: `url(${bg02})`,
+        }}
+      >
         <div className="home_hero_blank"></div>
         <div className="home_hero_col-02">
           <img src={process.env.PUBLIC_URL + "images/cupang.png"} />{" "}
           <div className="text-wrapper">
             <b>{homeTitle02}</b>
             <p>{homeDesc02}</p>
-            <Link to="/" className="button">
+            <Link to="/bundle" className="button">
               Explore
             </Link>
           </div>

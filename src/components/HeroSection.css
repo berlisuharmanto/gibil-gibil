@@ -5,7 +5,6 @@
 
 .home_hero_row-01 {
   display: flex;
-  background-image: url("https://raw.githubusercontent.com/berlisuharmanto/Images-Assets/main/home_row01.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -34,10 +33,9 @@
 
 .home_hero_row-02 {
   display: flex;
-  background-image: url("https://raw.githubusercontent.com/berlisuharmanto/Images-Assets/main/home_row02.png");
   flex-direction: row;
   text-align: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   padding-top: 72px;
   height: 475px;
@@ -85,10 +83,20 @@
   border: 1px solid #5d5fef;
   border-radius: 10px;
   color: #5d5fef;
+  transition: 0.2s;
 }
 
 .home_hero_row-02 a:hover {
   background-color: #5d5fef;
   color: #fff;
-  transition: 0.2s;
+}
+
+@media screen and (max-width: 1366px) {
+  .home_hero_row-01 {
+    height: 375px;
+  }
+
+  .home_hero_row-02 {
+    height: 375px;
+  }
 }

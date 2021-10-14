@@ -35,3 +35,13 @@
 .hero_carousel_container-01 .img-container:hover .img-hover {
   opacity: 1;
 }
+
+@media screen and (max-width: 1366px) {
+  .hero_carousel_container-01 .carousel-slider {
+    height: 230px;
+  }
+
+  .hero_carousel_container-01 .img-hover {
+    height: 192px;
+  }
+}

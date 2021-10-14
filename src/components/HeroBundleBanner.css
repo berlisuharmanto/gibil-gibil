@@ -1,0 +1,23 @@
+.hero_bundle_banner_container {
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 860px;
+  width: 100%;
+}
+
+.hero_bundle_banner_container .text-wrapper {
+  color: #fff;
+  margin-top: 580px;
+  text-align: center;
+  width: 45%;
+}
+
+.hero_bundle_banner_container .text-wrapper b {
+  font-size: 64px;
+}
+
+.hero_bundle_banner_container .text-wrapper p {
+  font-size: 32px;
+}

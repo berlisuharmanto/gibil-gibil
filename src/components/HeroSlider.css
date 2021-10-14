@@ -69,3 +69,13 @@
 .hero_slider_container .carousel .control-dots {
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 1366px) {
+  .carousel .control-dots .dot {
+    width: 60px;
+  }
+
+  .hero_slider_container .carousel-slider {
+    height: 150px;
+  }
+}
