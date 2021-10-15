@@ -1,11 +1,12 @@
 require("dotenv").config();
+require("express-async-errors");
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const apiPort = 3000;
+const apiPort = 5000;
 
-const connectDB = require("./models/connect");
+const connectDB = require("./lib/db/connect");
 const productsRouter = require("./routes/products");
 
 app.use(cors());
