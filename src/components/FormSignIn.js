@@ -28,7 +28,7 @@ function FormSignIn({
     } else if (password.length < 7) {
       alert("Password at least 8 character");
     } else {
-      history.push("/Home");
+      history.push("/");
     }
   };
   return (

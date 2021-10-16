@@ -9,14 +9,26 @@ const login = async (req, res) => {
     throw new loginAPIError("Please provide email and password", 400);
   }
 
-  const token = jwt.sign(email, process.env.JWT_SECRET, {
-    expiresIn: "1d",
-  });
-  res.status(200).json({ msg: "user created", token });
+  const user = await User.findOne({ email, password });
+
+  if (user) {
+    const token = jwt.sign({ email }, process.env.JWT_SECRET, {
+      expiresIn: "1d",
+    });
+
+    user.token = token;
+    res.status(200).json(`Welcome back ${user}`);
+  }
+
+  res.status(400).json("Invalid user");
 };
 
 const register = async (req, res) => {
   const { email, password, name, address } = req.body;
+
+  if (!(email && password && name && address)) {
+    res.status(400).json({ msg: "all fields are required" });
+  }
 
   const checkIdentical = async (condition, value) => {
     const userExist = await User.findOne({ [condition]: value });
@@ -34,13 +46,21 @@ const register = async (req, res) => {
   }
 
   const newUser = new User({
-    email,
+    email: email.toLowerCase(),
     password,
     name,
     address,
   });
+
+  const token = jwt.sign({ email }, process.env.JWT_SECRET, {
+    expiresIn: "1d",
+  });
+
+  newUser.token = token;
+
   await newUser.save();
-  return res.status(201).json({ msg: "Register Success" });
+
+  return res.status(201).json({ msg: "Register Success", token });
 };
 
 const dashboard = async (req, res) => {

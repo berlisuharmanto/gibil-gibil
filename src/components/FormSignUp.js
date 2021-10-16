@@ -7,7 +7,7 @@ function FormSignUp({
   title1,
   NameLabel,
   EmailLabel,
-  PhoneNumber,
+  Address,
   passLabel,
   passConfirmation,
   button1,
@@ -17,21 +17,19 @@ function FormSignUp({
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const [passConfirm, setPasswordConfirmation] = useState("");
 
-  const handleLogin = (e) => {
+  const register = (e) => {
     e.preventDefault();
 
     if (name === "") {
       alert("Name is required");
     } else if (email === "") {
       alert("Email is required");
-    } else if (phoneNumber === "") {
-      alert("Phone Number is required");
-    } else if (phoneNumber.length < 9) {
-      alert("Phone Number at least 10 character");
+    } else if (address === "") {
+      alert("Address is required");
     } else if (password === "") {
       alert("Password is required");
     } else if (password.length < 7) {
@@ -41,7 +39,28 @@ function FormSignUp({
     } else if (password !== passConfirm) {
       alert("Password and Password Confirmation doesn't match");
     } else {
-      history.push("/Home");
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const raw = JSON.stringify({
+        email,
+        password,
+        name,
+        address,
+      });
+
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch("http://localhost:5000/api/v1/register", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+      history.push("/");
     }
   };
   return (
@@ -52,7 +71,7 @@ function FormSignUp({
           <b className="title1">{title1}</b>
         </div>
         <div className="CardForm">
-          <form onSubmit={(e) => handleLogin(e)}>
+          <form onSubmit={(e) => register(e)}>
             <label>{NameLabel}</label>
             <input
               type="text"
@@ -67,13 +86,13 @@ function FormSignUp({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label>{PhoneNumber}</label>
+            <label>{Address}</label>
             <input
               type="tel"
               name="Phone Number"
               max="13"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
             ></input>
             <label>{passLabel}</label>
             <input

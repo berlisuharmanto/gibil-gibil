@@ -60,7 +60,7 @@ export const FormObject2 = {
   title1: "Sign Up",
   NameLabel: "Name",
   EmailLabel: "Email",
-  PhoneNumber: "Phone Number",
+  Address: "Address",
   passLabel: "Password",
   passConfirmation: "Password Confirmation",
   button1: "Create Account",
