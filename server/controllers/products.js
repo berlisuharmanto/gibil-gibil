@@ -1,12 +1,25 @@
 const Products = require("../models/Products");
 
 const getsAllProductsStatic = async (req, res) => {
-  throw new Error("testing async errors");
-  res.status(200).json({ msg: "product testing route" });
+  const products = await Products.find({ name: "Airator" });
+  res.status(200).json({ products });
 };
 
 const getsAllProducts = async (req, res) => {
-  res.status(200).json({ msg: "product route" });
+  const { name, price } = req.query;
+  const queryObject = {};
+
+  if (name) {
+    queryObject.name = { $regex: name, $options: "i" };
+  }
+
+  if (price) {
+    queryObject.price = { $regex: price, $options: "i" };
+  }
+
+  console.log(queryObject);
+  const products = await Products.find(queryObject);
+  res.status(200).json({ products, nbHits: products.length });
 };
 
 const createProduct = async (req, res) => {

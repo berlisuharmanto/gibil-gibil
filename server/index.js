@@ -7,6 +7,7 @@ const app = express();
 const apiPort = 5000;
 
 const connectDB = require("./lib/db/connect");
+const userRouter = require("./routes/user");
 const productsRouter = require("./routes/products");
 
 app.use(cors());
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
   res.send('<h1>Store API</h1><a href="/api/v1/products/">products route</a>');
 });
 
+app.use("/api/v1", userRouter);
 app.use("/api/v1/products", productsRouter);
 
 app.use(notFoundMiddleware);
