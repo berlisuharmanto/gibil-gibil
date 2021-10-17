@@ -17,7 +17,7 @@ const login = async (req, res) => {
     });
 
     user.token = token;
-    res.status(200).json({ token });
+    res.status(200).json(token);
   } else {
     res.status(400).json("Invalid user");
   }
@@ -60,7 +60,7 @@ const register = async (req, res) => {
 
   await newUser.save();
 
-  return res.status(201).json({ msg: "Register Success", token });
+  return res.status(201).json(token);
 };
 
 const dashboard = async (req, res) => {
