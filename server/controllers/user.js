@@ -17,10 +17,10 @@ const login = async (req, res) => {
     });
 
     user.token = token;
-    res.status(200).json(`Welcome back ${user}`);
+    res.status(200).json({ token });
+  } else {
+    res.status(400).json("Invalid user");
   }
-
-  res.status(400).json("Invalid user");
 };
 
 const register = async (req, res) => {

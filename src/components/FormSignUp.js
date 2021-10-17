@@ -49,7 +49,7 @@ function FormSignUp({
         address,
       });
 
-      var requestOptions = {
+      const requestOptions = {
         method: "POST",
         headers: myHeaders,
         body: raw,
