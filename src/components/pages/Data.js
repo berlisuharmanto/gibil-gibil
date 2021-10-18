@@ -7,6 +7,15 @@ export const homeObjOne = {
   bg02: "images/home_row02.png",
 };
 
+export const settingObj = {
+  settingsTitle: "General Account Settings",
+  settingsCont01: "Name",
+  settingsCont02: "Password",
+  settingsCont03: "Address",
+  settingsCont04: "Payment Method",
+  no_account: "No. Account"
+};
+
 export const trendObjTwo = {
   header: "Instagramable Design",
   img01: "images/img01.png",
