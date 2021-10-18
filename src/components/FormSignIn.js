@@ -36,36 +36,19 @@ function FormSignIn({
         password,
       });
 
-      const loginPost = {
+      const requestOptions = {
         method: "POST",
         headers: myHeaders,
         body: raw,
         redirect: "follow",
       };
 
-      fetch("http://localhost:5000/api/v1/login", loginPost)
+      fetch("http://localhost:5000/api/v1/login", requestOptions)
         .then((response) => response.text())
         .then((result) => {
-          myHeaders.append("Accept", "*/*");
-          myHeaders.append("Connection", "keep-alive");
-          myHeaders.append(
-            "Authorization",
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNjM0NDQyMTE5LCJleHAiOjE2MzQ1Mjg1MTl9.xmP2HsutAQYdWxNCFyxl2gN9qhTPybwBC6h94PFxgt0"
-          );
-
-          const authorized = {
-            method: "GET",
-            headers: myHeaders,
-            redirect: "follow",
-          };
-
-          fetch("http://localhost:5000/api/v1/dashboard", authorized)
-            .then((response) => response.text())
-            .then((result) => console.log(result))
-            .catch((error) => console.log("error", error));
+          localStorage.setItem("token", result);
         })
         .catch((error) => console.log("error", error));
-
       history.push("/");
     }
   };

@@ -58,7 +58,9 @@ function FormSignUp({
 
       fetch("http://localhost:5000/api/v1/register", requestOptions)
         .then((response) => response.text())
-        .then((result) => console.log(result))
+        .then((result) => {
+          localStorage.setItem("token", result);
+        })
         .catch((error) => console.log("error", error));
       history.push("/");
     }

@@ -11,6 +11,7 @@ import Trend from "./components/pages/Trend";
 import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import Cart from "./components/pages/Cart";
+import Settings from "./components/pages/Settings";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/purchase" exact component={Purchase} />
         <Route path="/detailpurchase" exact component={DetailPurchase} />
         <Route path="/cart" exact component={Cart} />
+        <Route path="/settings" exact component={Settings} />
       </Switch>
       <Footer />
     </Router>
