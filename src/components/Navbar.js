@@ -7,8 +7,6 @@ function Navbar() {
 
   console.log(location.pathname);
 
-  const isLogin = localStorage.getItem("token");
-
   const [login, setLogin] = useState(localStorage.getItem("token"));
 
   useEffect(() => {
