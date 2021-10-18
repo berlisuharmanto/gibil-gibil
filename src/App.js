@@ -8,8 +8,8 @@ import DetailPurchase from "./components/pages/DetailPurchase";
 import Home from "./components/pages/Home";
 import Purchase from "./components/pages/Purchase";
 import Trend from "./components/pages/Trend";
-import SignIn from "./components/pages/SignIn";
-import SignUp from "./components/pages/SignUp";
+import SignIn from "./components/pages/signin";
+import SignUp from "./components/pages/signup";
 import Cart from "./components/pages/Cart";
 import Settings from "./components/pages/Settings";
 

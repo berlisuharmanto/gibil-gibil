@@ -38,6 +38,8 @@ function FormSignUp({
       alert("Password Confirmation is required");
     } else if (password !== passConfirm) {
       alert("Password and Password Confirmation doesn't match");
+    } else if (checkBox.checked == false){
+      alert("Check Terms and Conditions for create account")
     } else {
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
@@ -111,7 +113,7 @@ function FormSignUp({
               onChange={(e) => setPasswordConfirmation(e.target.value)}
             />
             <div className="Terms">
-              <input className="check-box" type="checkbox" />
+              <input className="check-box" type="checkbox" required/>
               <label for="Agreement">
                 I agree with the terms and conditions
               </label>
