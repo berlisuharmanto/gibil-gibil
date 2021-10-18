@@ -8,6 +8,8 @@ import DetailPurchase from "./components/pages/DetailPurchase";
 import Home from "./components/pages/Home";
 import Purchase from "./components/pages/Purchase";
 import Trend from "./components/pages/Trend";
+import SignIn from "./components/pages/SignIn";
+import SignUp from "./components/pages/SignUp";
 import Cart from "./components/pages/Cart";
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/trend" exact component={Trend} />
+        <Route path="/signin" exact component={SignIn} />
+        <Route path="/signup" exact component={SignUp} />
         <Route path="/article" exact component={Article} />
         <Route path="/bundle" exact component={Bundle} />
         <Route path="/purchase" exact component={Purchase} />

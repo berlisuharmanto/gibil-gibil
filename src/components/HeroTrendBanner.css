@@ -1,6 +1,5 @@
 .hero_banner_container {
   display: flex;
-  background-image: url("https://raw.githubusercontent.com/berlisuharmanto/Images-Assets/main/trendBanner.png");
   background-repeat: no-repeat;
   background-size: cover;
   place-content: center;
