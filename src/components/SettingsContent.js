@@ -14,9 +14,10 @@ function SettingsContent({
   const logout = (e) => {
     e.preventDefault();
 
+    localStorage.removeItem("name");
     localStorage.removeItem("token");
     console.log("WHY IS IT NOT WORKING???????");
-    history.push("/signin");
+    history.push("/");
   };
   return (
     <>

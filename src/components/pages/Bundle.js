@@ -28,7 +28,7 @@ function Bundle() {
             <HeroCard {...bundleCard} />
             <HeroCard {...bundleCard} />
           </div>
-          <div className="card_row">
+          <div className="card_row" style={{ display: "flex" }}>
             <HeroCard {...bundleCard} />
             <HeroCard {...bundleCard} />
             <HeroCard {...bundleCard} />

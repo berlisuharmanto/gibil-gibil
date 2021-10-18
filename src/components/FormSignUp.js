@@ -57,9 +57,11 @@ function FormSignUp({
       };
 
       fetch("http://localhost:5000/api/v1/register", requestOptions)
-        .then((response) => response.text())
+        .then((response) => response.json())
         .then((result) => {
-          localStorage.setItem("token", result);
+          const { name, token } = result;
+          localStorage.setItem("name", name);
+          localStorage.setItem("token", token);
         })
         .catch((error) => console.log("error", error));
       history.push("/");
@@ -111,7 +113,7 @@ function FormSignUp({
               onChange={(e) => setPasswordConfirmation(e.target.value)}
             />
             <div className="Terms">
-              <input className="check-box" type="checkbox" />
+              <input className="check-box" type="checkbox" required />
               <label for="Agreement">
                 I agree with the terms and conditions
               </label>

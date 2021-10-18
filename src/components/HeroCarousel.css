@@ -26,10 +26,15 @@
   opacity: 0;
   top: 5px;
   width: 100%;
-  height: 270px;
+  height: 97%;
   transition: 0.2s;
   font-size: 20px;
   color: #fff;
+}
+
+.hero_carousel_container-01 img {
+  height: 100%;
+  width: 100%;
 }
 
 .hero_carousel_container-01 .img-container:hover .img-hover {
@@ -42,6 +47,6 @@
   }
 
   .hero_carousel_container-01 .img-hover {
-    height: 192px;
+    height: 191px;
   }
 }

@@ -44,14 +44,17 @@ function FormSignIn({
       };
 
       fetch("http://localhost:5000/api/v1/login", requestOptions)
-        .then((response) => response.text())
+        .then((response) => response.json())
         .then((result) => {
-          localStorage.setItem("token", result);
+          const { name, token } = result;
+          localStorage.setItem("name", name);
+          localStorage.setItem("token", token);
         })
         .catch((error) => console.log("error", error));
       history.push("/");
     }
   };
+
   return (
     <>
       <div className="hero-sign-in">

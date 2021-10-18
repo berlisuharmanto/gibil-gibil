@@ -5,6 +5,8 @@ import "./Navbar.css";
 function Navbar() {
   const location = useLocation();
 
+  const name = localStorage.getItem("name");
+
   console.log(location.pathname);
 
   const [login, setLogin] = useState(localStorage.getItem("token"));
@@ -153,6 +155,11 @@ function Navbar() {
 
           <div className="nav_right_container">
             <ul>
+              <li className="nav-button">
+                <div className="button-links" style={{ color: "#5d5fef" }}>
+                  {name}
+                </div>
+              </li>
               <li>
                 <Link className="icon" to="/cart">
                   <img src={process.env.PUBLIC_URL + "images/cart.svg"} />{" "}

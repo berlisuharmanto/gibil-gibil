@@ -17,7 +17,7 @@ const login = async (req, res) => {
     });
 
     user.token = token;
-    res.status(200).json(token);
+    res.status(200).json({ name: user.name, token: token });
   } else {
     res.status(400).json("Invalid user");
   }

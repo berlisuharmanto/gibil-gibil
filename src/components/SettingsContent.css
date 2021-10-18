@@ -10,7 +10,7 @@
   width: 90%;
 }
 
-table {
+.content table {
   border-collapse: collapse;
   width: 100%;
   margin-top: 65px;
@@ -18,25 +18,25 @@ table {
   margin-right: 155px;
 }
 
-table tr:first-child {
+.content table tr:first-child {
   border-bottom: 1px solid #828282;
 }
 
-table tr {
+.content table tr {
   border-bottom: 1px solid #c4c4c4;
 }
 
-table tr td {
+.content table tr td {
   padding: 20px 0px 20px 0px;
   font-weight: bold;
   font-size: 20px;
 }
 
-.edit {
+.content .edit {
   text-align: end;
 }
 
-table tr td a {
+.content table tr td a {
   color: gray;
   text-decoration: none;
   font-size: 16px;
@@ -44,17 +44,17 @@ table tr td a {
   padding-right: 20px;
 }
 
-.payment_method {
+.content .payment_method {
   padding-right: 20px;
 }
 
-.payment_text {
+.content .payment_text {
   color: black;
   font-weight: bold;
   font-size: 20px;
 }
 
-.no_account {
+.content .no_account {
   color: #cacaca;
   display: inline;
   float: right;
@@ -64,18 +64,18 @@ table tr td a {
   padding: 0px 80px;
 }
 
-img {
+.content img {
   padding-left: 10px;
   vertical-align: middle;
 }
 
-.logout {
+.content .logout {
   text-align: right;
   margin-top: 20%;
   margin-bottom: 5%;
 }
 
-.button {
+.content .button {
   border: 1px solid red;
   border-radius: 10px;
   color: red;
@@ -84,7 +84,7 @@ img {
   padding: 15px 40px 15px 40px;
 }
 
-.button:hover {
+.content .button:hover {
   background-color: red;
   color: white;
   transition: 0.2s;
