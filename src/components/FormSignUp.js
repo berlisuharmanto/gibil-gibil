@@ -38,8 +38,6 @@ function FormSignUp({
       alert("Password Confirmation is required");
     } else if (password !== passConfirm) {
       alert("Password and Password Confirmation doesn't match");
-    } else if (checkBox.checked == false){
-      alert("Check Terms and Conditions for create account")
     } else {
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
