@@ -62,9 +62,9 @@ function FormSignUp({
           const { name, token } = result;
           localStorage.setItem("name", name);
           localStorage.setItem("token", token);
+          history.push("/");
         })
         .catch((error) => console.log("error", error));
-      history.push("/");
     }
   };
   return (

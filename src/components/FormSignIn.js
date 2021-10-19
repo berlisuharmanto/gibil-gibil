@@ -46,6 +46,12 @@ function FormSignIn({
       fetch("http://localhost:5000/api/v1/login", requestOptions)
         .then((response) => response.json())
         .then((result) => {
+          if (result === "Invalid user") {
+            console.log(result);
+            alert(result);
+            return null;
+          }
+
           const { name, token } = result;
           localStorage.setItem("name", name);
           localStorage.setItem("token", token);

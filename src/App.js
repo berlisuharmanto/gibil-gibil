@@ -12,11 +12,13 @@ import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import Cart from "./components/pages/Cart";
 import Settings from "./components/pages/Settings";
+import ScrollToTop from "./components/actions/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <ScrollToTop />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/trend" exact component={Trend} />

@@ -60,7 +60,7 @@ const register = async (req, res) => {
 
   await newUser.save();
 
-  return res.status(201).json(token);
+  return res.status(201).json({ name: user.name, token: token });
 };
 
 const dashboard = async (req, res) => {
