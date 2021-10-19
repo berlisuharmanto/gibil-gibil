@@ -13,10 +13,24 @@ const productsSchema = new mongoose.Schema({
     type: Number,
     required: [true, "numOfProduct is required"],
   },
-  createdAt: {
-    type: Date,
-    default: Date.now(),
+  prodImage: {
+    type: String,
+    required: [true, "prodImage is required"],
   },
+  prodBg: {
+    type: String,
+    required: [true, "prodBg is required"],
+  },
+  prodDesc: {
+    type: String,
+    required: [true, "prodDesc is required"],
+  },
+  prodSpec: [
+    {
+      type: String,
+      required: [true, "prodSpec is required"],
+    },
+  ],
 });
 
 module.exports = mongoose.model("Products", productsSchema);

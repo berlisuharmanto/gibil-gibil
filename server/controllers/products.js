@@ -1,9 +1,13 @@
 const Products = require("../models/Products");
 
 const getsAllProductsStatic = async (req, res) => {
-  const products = await Products.find({ name: "Airator" });
-  console.log(products);
-  res.status(200).json({ products });
+  const product = await Products.findOne({});
+
+  if (product) {
+    res.status(200).json({ product });
+  } else {
+    res.status(400).json("Invalid product");
+  }
 };
 
 const getsAllProducts = async (req, res) => {
@@ -18,18 +22,23 @@ const getsAllProducts = async (req, res) => {
     queryObject.price = { $regex: price, $options: "i" };
   }
 
-  console.log(queryObject);
   const products = await Products.find(queryObject);
+  console.log(products);
   res.status(200).json({ products, nbHits: products.length });
 };
 
 const createProduct = async (req, res) => {
-  const { name, price, numOfProducts } = req.body;
+  const { name, price, numOfProducts, prodImage, prodBg, prodDesc, prodSpec } =
+    req.body;
 
   const newProduct = new Products({
     name,
     price,
     numOfProducts,
+    prodImage,
+    prodBg,
+    prodDesc,
+    prodSpec,
   });
 
   await newProduct.save();
