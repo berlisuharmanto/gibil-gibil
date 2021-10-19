@@ -27,7 +27,7 @@ function App() {
         <Route path="/article" exact component={Article} />
         <Route path="/bundle" exact component={Bundle} />
         <Route path="/purchase" exact component={Purchase} />
-        <Route path="/detailpurchase" exact component={DetailPurchase} />
+        <Route path="/purchase/:_id" exact component={DetailPurchase} />
         <Route path="/cart" exact component={Cart} />
         <Route path="/settings" exact component={Settings} />
       </Switch>

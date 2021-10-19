@@ -13,7 +13,7 @@ export const settingObj = {
   settingsCont02: "Password",
   settingsCont03: "Address",
   settingsCont04: "Payment Method",
-  no_account: "No. Account"
+  no_account: "No. Account",
 };
 
 export const trendObjTwo = {

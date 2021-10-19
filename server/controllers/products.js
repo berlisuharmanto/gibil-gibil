@@ -1,13 +1,18 @@
 const Products = require("../models/Products");
 
 const getsAllProductsStatic = async (req, res) => {
-  const product = await Products.findOne({});
+  const id = req.params._id;
 
-  if (product) {
-    res.status(200).json({ product });
-  } else {
-    res.status(400).json("Invalid product");
-  }
+  Products.findById(id)
+    .select("name price _id prodImage prodBg prodDesc prodSpec")
+    .exec()
+    .then((doc) => {
+      if (doc) {
+        res.status(200).json({ doc });
+      } else {
+        res.status(400).json("Invalid product");
+      }
+    });
 };
 
 const getsAllProducts = async (req, res) => {
