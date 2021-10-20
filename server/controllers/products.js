@@ -6,13 +6,30 @@ const getsAllProductsStatic = async (req, res) => {
   if (product) {
     res.send({
       status: "success",
-      message: "single product ditemukan",
+      message: "Product found",
       data: product,
     });
   } else {
     res.send({
       status: "warning",
-      message: "single product tidak ditemukan",
+      message: "Product not found",
+    });
+  }
+};
+
+const getsProduct = async (req, res) => {
+  const product = await Products.findById(req.params._id);
+
+  if (product) {
+    res.send({
+      status: "success",
+      message: "Product found",
+      data: product,
+    });
+  } else {
+    res.send({
+      status: "warning",
+      message: "Product not found",
     });
   }
 };
@@ -30,7 +47,6 @@ const getsAllProducts = async (req, res) => {
   }
 
   const products = await Products.find(queryObject);
-  console.log(products);
   res.status(200).json({ products });
 };
 
@@ -54,6 +70,7 @@ const createProduct = async (req, res) => {
 
 module.exports = {
   getsAllProducts,
+  getsProduct,
   getsAllProductsStatic,
   createProduct,
 };

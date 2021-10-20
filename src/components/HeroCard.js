@@ -11,7 +11,6 @@ function HeroCard() {
 
   const requestOptions = {
     method: "GET",
-    redirect: "follow",
   };
 
   const fetchItems = async () => {

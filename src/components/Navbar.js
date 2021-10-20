@@ -9,6 +9,8 @@ function Navbar() {
 
   console.log(location.pathname);
 
+  const [loading, setLoading] = useState(false);
+
   const [login, setLogin] = useState(localStorage.getItem("token"));
 
   useEffect(() => {
@@ -19,7 +21,7 @@ function Navbar() {
     return null;
   }
 
-  if (!login) {
+  if (!login && !loading) {
     return (
       <>
         <nav>

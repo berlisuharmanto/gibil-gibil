@@ -21,13 +21,13 @@ function App() {
       <ScrollToTop />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/trend" exact component={Trend} />
+        <Route path="/trend" component={Trend} />
         <Route path="/signin" exact component={SignIn} />
         <Route path="/signup" exact component={SignUp} />
         <Route path="/article" exact component={Article} />
         <Route path="/bundle" exact component={Bundle} />
         <Route path="/purchase" exact component={Purchase} />
-        <Route path="/purchase/:_id" exact component={DetailPurchase} />
+        <Route path="/purchase/:id" component={DetailPurchase} />
         <Route path="/cart" exact component={Cart} />
         <Route path="/settings" exact component={Settings} />
       </Switch>
