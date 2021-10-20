@@ -1,18 +1,20 @@
 const Products = require("../models/Products");
 
 const getsAllProductsStatic = async (req, res) => {
-  const id = req.params._id;
+  const product = await Products.findById(req.params._id);
 
-  Products.findById(id)
-    .select("name price _id prodImage prodBg prodDesc prodSpec")
-    .exec()
-    .then((doc) => {
-      if (doc) {
-        res.status(200).json({ doc });
-      } else {
-        res.status(400).json("Invalid product");
-      }
+  if (product) {
+    res.send({
+      status: "success",
+      message: "single product ditemukan",
+      data: product,
     });
+  } else {
+    res.send({
+      status: "warning",
+      message: "single product tidak ditemukan",
+    });
+  }
 };
 
 const getsAllProducts = async (req, res) => {
@@ -29,7 +31,7 @@ const getsAllProducts = async (req, res) => {
 
   const products = await Products.find(queryObject);
   console.log(products);
-  res.status(200).json({ products, nbHits: products.length });
+  res.status(200).json({ products });
 };
 
 const createProduct = async (req, res) => {

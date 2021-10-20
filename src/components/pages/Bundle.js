@@ -1,7 +1,7 @@
 import React from "react";
 import HeroBundleBanner from "../HeroBundleBanner";
 import HeroCard from "../HeroCard";
-import { bundleBanner, bundleCard } from "./Data";
+import { bundleBanner } from "./Data";
 import Styled from "styled-components";
 
 function Bundle() {
@@ -23,15 +23,11 @@ function Bundle() {
         }}
       >
         <div className="hero_card_container" style={{ display: "flex" }}>
-          <div className="card_row" style={{ display: "flex" }}>
-            <HeroCard {...bundleCard} />
-            <HeroCard {...bundleCard} />
-            <HeroCard {...bundleCard} />
-          </div>
-          <div className="card_row" style={{ display: "flex" }}>
-            <HeroCard {...bundleCard} />
-            <HeroCard {...bundleCard} />
-            <HeroCard {...bundleCard} />
+          <div
+            className="card_row"
+            style={{ display: "flex", flexWrap: "wrap", width: "1560px" }}
+          >
+            <HeroCard />
           </div>
         </div>
       </CardMain>
