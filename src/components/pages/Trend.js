@@ -10,7 +10,6 @@ function Trend() {
       <HeroTrendBanner {...trendBanner} />
       <HeroCarousel {...trendCarousel} />
       <HeroSlider {...trendObjTwo} />
-      <HeroSlider {...trendObjThree} />
     </div>
   );
 }

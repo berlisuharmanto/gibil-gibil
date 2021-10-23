@@ -1,5 +1,4 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom";
 import "./HeroSlider.css";
@@ -17,84 +16,24 @@ function HeroSlider({
 }) {
   return (
     <>
-      <div className="hero_slider_group">
-        <div className="hero_slider_container">
-          <div className="hero_slider_header">{header}</div>
-          <Carousel>
-            <div className="hero_slider_list">
-              <Link to="/article" className="img-container">
-                <img src={img01} alt={img01} />
-                <div className="img-hover">{desc01}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img02} alt={img02} />
-                <div className="img-hover">{desc02}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img03} alt={img03} />
-                <div className="img-hover">{desc03}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img04} alt={img04} />
-                <div className="img-hover">{desc04}</div>
-              </Link>
+      <div className="hero_trend_main">
+        <Link to="/article" className="hero_trend_container">
+          <div className="hero_trend_content">
+            <div className="hero_image">
+              <img src={img01} alt="image" />
             </div>
-            <div className="hero_slider_list">
-              <Link to="/article" className="img-container">
-                <img src={img01} alt={img01} />
-                <div className="img-hover">{desc01}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img02} alt={img02} />
-                <div className="img-hover">{desc02}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img03} alt={img03} />
-                <div className="img-hover">{desc03}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img04} alt={img04} />
-                <div className="img-hover">{desc04}</div>
-              </Link>
+            <div className="text-wrapper">
+              <h2>Memeluk Ikan Lumba-Lumba</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                sapien sem, tristique vel molestie in, euismod eu odio. Vivamus
+                vulputate ultricies feugiat. Donec tempus nunc mauris, semper
+                suscipit sapien fermentum ac. Sed et semper lorem. Morbi blandit
+                est a mi ullamcorper hendrerit. Ut purus nunc....
+              </p>
             </div>
-            <div className="hero_slider_list">
-              <Link to="/article" className="img-container">
-                <img src={img01} alt={img01} />
-                <div className="img-hover">{desc01}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img02} alt={img02} />
-                <div className="img-hover">{desc02}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img03} alt={img03} />
-                <div className="img-hover">{desc03}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img04} alt={img04} />
-                <div className="img-hover">{desc04}</div>
-              </Link>
-            </div>
-            <div className="hero_slider_list">
-              <Link to="/article" className="img-container">
-                <img src={img01} alt={img01} />
-                <div className="img-hover">{desc01}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img02} alt={img02} />
-                <div className="img-hover">{desc02}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img03} alt={img03} />
-                <div className="img-hover">{desc03}</div>
-              </Link>
-              <Link to="/article" className="img-container">
-                <img src={img04} alt={img04} />
-                <div className="img-hover">{desc04}</div>
-              </Link>
-            </div>
-          </Carousel>
-        </div>
+          </div>
+        </Link>
       </div>
     </>
   );
