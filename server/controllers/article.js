@@ -18,8 +18,8 @@ const getsArticle = async (req, res) => {
 };
 
 const getsAllArticle = async (req, res) => {
-  const products = await Products.find(req.query);
-  res.status(200).json({ products });
+  const article = await Article.find(req.query);
+  res.status(200).json({ article });
 };
 
 const createArticle = async (req, res) => {

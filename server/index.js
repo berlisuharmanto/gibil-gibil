@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1", userRouter);
 app.use("/api/v1/products", productsRouter);
-app.use("/api/v1/article");
+app.use("/api/v1/article", articleRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorMiddleware);
