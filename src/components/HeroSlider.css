@@ -1,5 +1,6 @@
 .hero_trend_main {
   display: flex;
+  flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -40,6 +41,34 @@
   width: 60%;
 }
 
-.hero_trend_content .text-wrapper h2 {
-  padding-bottom: 10px;
+.hero_trend_content .text-wrapper p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+@media screen and (max-width: 1366px) {
+  .hero_trend_container {
+    width: 540px;
+    height: 220px;
+  }
+
+  .hero_trend_content .text-wrapper p {
+    padding-top: 10px;
+    -webkit-line-clamp: 3;
+  }
+
+  .hero_trend_content .text-wrapper h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .hero_trend_content {
+    height: 130px;
+  }
 }

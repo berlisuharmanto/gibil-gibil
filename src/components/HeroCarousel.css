@@ -13,8 +13,17 @@
   height: 320px;
 }
 
-.hero_carousel_container-01 .carousel .control-dots {
+.hero_carousel_container-01 .carousel .control-dots .dot {
+  background-color: #c4c4c4;
+  border-radius: 5px;
+  box-shadow: none;
+  width: 80px;
+  height: 20px;
   margin-bottom: 0;
+}
+
+.hero_carousel_container-01 .carousel .control-arrow {
+  display: none;
 }
 
 .hero_carousel_container-01 .img-hover {
@@ -43,10 +52,16 @@
 
 @media screen and (max-width: 1366px) {
   .hero_carousel_container-01 .carousel-slider {
-    height: 230px;
+    height: 240px;
   }
 
   .hero_carousel_container-01 .img-hover {
     height: 191px;
+  }
+
+  .hero_carousel_container-01 .carousel .control-dots .dot {
+    padding: 5px;
+    width: 70px;
+    height: 20px;
   }
 }

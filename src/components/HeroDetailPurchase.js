@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
 import formatK from "./actions/kFormatter";
 import "./HeroDetailPurchase.css";
 
