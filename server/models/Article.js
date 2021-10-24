@@ -5,6 +5,10 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: [true, "name is required"],
   },
+  featured: {
+    type: Boolean,
+    default: false,
+  },
   img: [
     {
       type: String,

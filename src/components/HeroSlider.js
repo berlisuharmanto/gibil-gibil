@@ -12,7 +12,7 @@ function HeroSlider({ item }) {
           <Link to="/article" className="hero_trend_container" key={item._id}>
             <div className="hero_trend_content">
               <div className="hero_image">
-                <img src={item.img} alt="article image" />
+                <img src={item.img[0]} alt="article image" />
               </div>
               <div className="text-wrapper">
                 <h2>{item.title}</h2>

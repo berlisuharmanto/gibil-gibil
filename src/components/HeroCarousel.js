@@ -12,7 +12,7 @@ function HeroCarousel({ item }) {
             {item.map((item) => (
               <div>
                 <Link to="/trend/:id" className="img-container" key={item._id}>
-                  <img src={item?.img} alt="article image" />
+                  <img src={item?.img[0]} alt="article image" />
                   <div className="img-hover">{item?.title}</div>
                 </Link>
               </div>

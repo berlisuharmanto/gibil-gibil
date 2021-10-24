@@ -11,7 +11,19 @@ function Trend() {
 
   useEffect(() => {
     fetchItems();
+    fetchFeatured();
   }, []);
+
+  const [featured, setFeatured] = useState([]);
+
+  const fetchFeatured = async () => {
+    const data = await fetch("http://localhost:5000/api/v1/article/");
+    const featured = await data.json();
+    const featuredFilter = featured.article.filter(
+      (item) => item.featured === true
+    );
+    setFeatured(featuredFilter);
+  };
 
   const [item, setItem] = useState([]);
 
@@ -24,7 +36,7 @@ function Trend() {
   return (
     <div>
       <HeroTrendBanner {...trendBanner} />
-      <HeroCarousel item={item} />
+      <HeroCarousel item={featured} />
       <HeroSlider item={item} />
     </div>
   );
