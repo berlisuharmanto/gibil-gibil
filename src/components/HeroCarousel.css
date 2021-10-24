@@ -9,7 +9,13 @@
   width: 40%;
 }
 
-.hero_carousel_container-01 .carousel-slider {
+.hero_carousel_container-01 .carousel-slider,
+.hero_carousel_container-01 .carousel-root {
+  height: 100%;
+}
+
+.hero_carousel_container-01 .slider-wrapper,
+.hero_carousel_container-01 .carousel-slider .selected {
   height: 320px;
 }
 
@@ -20,6 +26,10 @@
   width: 80px;
   height: 20px;
   margin-bottom: 0;
+}
+
+.hero_carousel_container-01 .carousel .control-dots {
+  bottom: 0;
 }
 
 .hero_carousel_container-01 .carousel .control-arrow {
@@ -35,7 +45,7 @@
   opacity: 0;
   top: 5px;
   width: 100%;
-  height: 97%;
+  height: 100%;
   transition: 0.2s;
   font-size: 20px;
   color: #fff;

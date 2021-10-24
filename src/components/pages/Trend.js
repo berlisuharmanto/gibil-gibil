@@ -24,7 +24,7 @@ function Trend() {
   return (
     <div>
       <HeroTrendBanner {...trendBanner} />
-      <HeroCarousel {...trendCarousel} />
+      <HeroCarousel item={item} />
       <HeroSlider item={item} />
     </div>
   );

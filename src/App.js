@@ -24,7 +24,7 @@ function App() {
         <Route path="/trend" component={Trend} />
         <Route path="/signin" exact component={SignIn} />
         <Route path="/signup" exact component={SignUp} />
-        <Route path="/article" exact component={Article} />
+        <Route path="/trend/:id" exact component={Article} />
         <Route path="/bundle" exact component={Bundle} />
         <Route path="/purchase" exact component={Purchase} />
         <Route path="/purchase/:id" component={DetailPurchase} />
