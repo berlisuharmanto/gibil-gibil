@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HeroTrendBanner from "../HeroTrendBanner";
 import HeroSlider from "../HeroSlider";
-import { trendBanner, trendCarousel, trendObjThree, trendObjTwo } from "./Data";
+import { trendBanner } from "./Data";
 import HeroCarousel from "../HeroCarousel";
 import { useParams } from "react-router";
 

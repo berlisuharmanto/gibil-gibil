@@ -20,7 +20,8 @@ function HeroCard() {
     );
     const items = await data.json();
     console.log(items.products);
-    setItems(items.products);
+    const featured = items.products.filter((item) => item.isFeatured === true);
+    setItems(featured);
   };
   return (
     <>

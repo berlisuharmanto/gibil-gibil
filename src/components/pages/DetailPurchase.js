@@ -28,10 +28,10 @@ function DetailPurchase() {
   };
 
   const fetchItems = async () => {
-    const fetchItems = await fetch(
+    const fetchItem = await fetch(
       `http://localhost:5000/api/v1/products/${id}`
     );
-    const item = await fetchItems.json();
+    const item = await fetchItem.json();
 
     console.log(item.data);
     setItem(item.data);
