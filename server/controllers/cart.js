@@ -6,7 +6,7 @@ const getsAllCarts = async (req, res) => {
 };
 
 const addToCarts = async (req, res) => {
-  const { prodId } = req.body;
+  const { userId, products } = req.body;
 };
 
 module.exports = {
