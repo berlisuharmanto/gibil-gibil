@@ -14,16 +14,12 @@ const articleSchema = new mongoose.Schema({
       type: String,
     },
   ],
-  head: [
-    {
-      type: String,
-    },
-  ],
-  paragraphs: [
-    {
-      type: String,
-    },
-  ],
+  preview: {
+    type: String,
+  },
+  article: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Article", articleSchema);

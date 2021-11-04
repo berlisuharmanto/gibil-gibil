@@ -68,9 +68,36 @@ const createProduct = async (req, res) => {
   return res.status(201).json({ msg: "masuk brah" });
 };
 
+const updateProduct = async (req, res) => {
+  const { price, numOfProducts } = req.body;
+
+  const product = await Products.findByIdAndUpdate(
+    req.params._id,
+    {
+      price,
+      numOfProducts,
+    },
+    { new: true }
+  );
+
+  if (product) {
+    res.send({
+      status: "success",
+      message: "Product updated",
+      data: product,
+    });
+  } else {
+    res.send({
+      status: "warning",
+      message: "Product not found",
+    });
+  }
+};
+
 module.exports = {
   getsAllProducts,
   getsProduct,
   getsAllProductsStatic,
   createProduct,
+  updateProduct,
 };

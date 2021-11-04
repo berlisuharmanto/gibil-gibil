@@ -16,7 +16,7 @@ function HeroSlider({ item }) {
               </div>
               <div className="text-wrapper">
                 <h2>{item.title}</h2>
-                <p>{item.paragraphs[0]}</p>
+                <p>{item.preview}</p>
               </div>
             </div>
           </Link>

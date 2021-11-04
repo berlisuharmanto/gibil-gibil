@@ -23,13 +23,14 @@ const getsAllArticle = async (req, res) => {
 };
 
 const createArticle = async (req, res) => {
-  const { title, img, head, paragraphs } = req.body;
+  const { title, img, featured, preview, article } = req.body;
 
   const newArticle = new Article({
     title,
     img,
-    head,
-    paragraphs,
+    featured,
+    preview,
+    article,
   });
 
   await newArticle.save();
