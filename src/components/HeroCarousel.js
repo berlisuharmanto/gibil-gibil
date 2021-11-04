@@ -11,9 +11,13 @@ function HeroCarousel({ item }) {
           <Carousel autoPlay>
             {item.map((item) => (
               <div>
-                <Link to="/trend/:id" className="img-container" key={item._id}>
-                  <img src={item?.img[0]} alt="article image" />
-                  <div className="img-hover">{item?.title}</div>
+                <Link
+                  to={`/trend/${item._id}`}
+                  className="img-container"
+                  key={item._id}
+                >
+                  <img src={item.img[0]} alt="article image" />
+                  <div className="img-hover">{item.title}</div>
                 </Link>
               </div>
             ))}

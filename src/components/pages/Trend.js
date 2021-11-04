@@ -7,7 +7,6 @@ import { useParams } from "react-router";
 
 function Trend() {
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     fetchItems();
@@ -22,6 +21,7 @@ function Trend() {
     const featuredFilter = featured.article.filter(
       (item) => item.featured === true
     );
+    console.log(featuredFilter);
     setFeatured(featuredFilter);
   };
 

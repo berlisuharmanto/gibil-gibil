@@ -5,8 +5,6 @@ import "./Footer.css";
 function Footer() {
   const location = useLocation();
 
-  console.log(location.pathname);
-
   if (location.pathname === "/signup") {
     return null;
   }

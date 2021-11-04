@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 import "./HeroSlider.css";
 
 function HeroSlider({ item }) {
-  console.log(`item is ${item}`);
   return (
     <>
       <div className="hero_trend_main">
         {item.map((item) => (
-          <Link to="/article" className="hero_trend_container" key={item._id}>
+          <Link
+            to={`/trend/${item._id}`}
+            className="hero_trend_container"
+            key={item._id}
+          >
             <div className="hero_trend_content">
               <div className="hero_image">
                 <img src={item.img[0]} alt="article image" />
