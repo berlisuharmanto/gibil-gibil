@@ -4,7 +4,7 @@ import "./HeroArticle.css";
 import HeroAside from "./HeroAside";
 import { useParams } from "react-router";
 
-function HeroArticle({ item }) {
+function HeroArticle({ banner, item }) {
   const { id } = useParams();
   const [recommendation, setRecommendation] = useState([]);
 
@@ -26,12 +26,14 @@ function HeroArticle({ item }) {
         <div className="hero_article_content">
           <div
             className="hero_article_banner"
-            // style={{
-            //   backgroundImage: `url(${banner})`,
-            // }}
+            style={{
+              backgroundImage: `url(${banner})`,
+            }}
           ></div>
           <div className="hero_article_core">
-            <div className="text-wrapper">{item.article}</div>
+            <div className="text-wrapper">
+              <div dangerouslySetInnerHTML={{ __html: item.article }} />
+            </div>
           </div>
         </div>
         <HeroAside item={recommendation} />
