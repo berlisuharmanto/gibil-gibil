@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import formatK from "./actions/kFormatter";
 import "./HeroRecommendation.css";
 
-function HeroRecomendation({ items }) {
+function HeroRecomendation() {
+  const { id } = useParams();
+  console.log(id);
+
+  useEffect(() => {
+    fetchRecommendation();
+  }, []);
+
+  const [recommendation, setRecommendation] = useState([]);
+
+  const fetchRecommendation = async () => {
+    const data = await fetch("http://localhost:5000/api/v1/products/");
+    const items = await data.json();
+    const itemsFilter = items.products.filter((item) => item._id !== id);
+    setRecommendation(itemsFilter);
+  };
   return (
     <>
       <div className="hero_recommendation_main">
         <div className="rec_content">
           <h1>Recommendation</h1>
           <div className="card_layout">
-            {items.map((item) => (
+            {recommendation.map((item) => (
               <Link
                 key={item._id}
                 to={`/purchase/${item._id}`}

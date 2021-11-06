@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { articleContent } from "./Data";
 import { useParams } from "react-router";
 import HeroArticle from "../HeroArticle";
 
@@ -23,7 +24,7 @@ function Article() {
   console.log(item);
   return (
     <>
-      <HeroArticle item={item} />
+      <HeroArticle item={item} {...articleContent} />
     </>
   );
 }

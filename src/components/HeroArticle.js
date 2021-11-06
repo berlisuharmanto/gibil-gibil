@@ -36,7 +36,7 @@ function HeroArticle({ banner, item }) {
             </div>
           </div>
         </div>
-        <HeroAside item={recommendation} />
+        <HeroAside item={recommendation} {...asideContent} />
       </div>
     </>
   );
