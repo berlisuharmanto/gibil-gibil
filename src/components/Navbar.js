@@ -81,7 +81,7 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="icon" to="/cart">
+                  <Link className="icon" to="/signin">
                     <img src={process.env.PUBLIC_URL + "images/cart.svg"} />{" "}
                   </Link>
                 </li>
