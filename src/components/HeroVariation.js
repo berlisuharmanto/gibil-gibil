@@ -2,14 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import "./HeroVariation.css";
 
-const addToCart = (e) => {
-  const cart = [];
-  const items = [{ name: "Berli" }, { name: "Suharmanto" }];
-  cart.push(items);
-  console.log(cart);
-};
-
-function HeroVariation({ size1, size2, size3, size4, size5, size6 }) {
+function HeroVariation({ item }) {
   useEffect(() => {
     setLogin(localStorage.getItem("token"));
   }, [localStorage.getItem("token")]);
@@ -18,14 +11,36 @@ function HeroVariation({ size1, size2, size3, size4, size5, size6 }) {
 
   const [login, setLogin] = useState(localStorage.getItem("token"));
 
+  function addToCart(e) {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({});
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:5000/api/v1/cart/add", requestOptions)
+      .then((response) => response.json())
+      .then((result) => history.push("/cart"))
+      .catch((error) => console.log("error", error));
+    history.push("/cart");
+  }
+
   if (!login) {
     return (
       <>
         <div className="hero_variation_main">
           <div className="variation_container">
             <div className="transaction">
-              <button>Add to cart</button>
-              <button>Buy Now</button>
+              <button onClick={() => history.push("/signin")}>
+                Add to cart
+              </button>
+              <button onClick={() => history.push("/signin")}>Buy Now</button>
             </div>
           </div>
         </div>

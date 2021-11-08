@@ -3,27 +3,7 @@ import { useParams } from "react-router";
 import formatK from "./actions/kFormatter";
 import "./HeroDetailPurchase.css";
 
-function HeroDetailPurchase() {
-  const { id } = useParams();
-
-  useEffect(() => {
-    fetchItems();
-  }, []);
-
-  const [item, setItem] = useState({});
-
-  const [specs, setSpecs] = useState([]);
-
-  const fetchItems = async () => {
-    const fetchItem = await fetch(
-      `http://localhost:5000/api/v1/products/${id}`
-    );
-    const item = await fetchItem.json();
-
-    console.log(item.data);
-    setItem(item.data);
-    setSpecs(item.data.prodSpec);
-  };
+function HeroDetailPurchase({ item, specs }) {
   return (
     <>
       <div className="hero_detail_purchase_main">

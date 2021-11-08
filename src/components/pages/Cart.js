@@ -7,11 +7,6 @@ function cart() {
   return (
     <>
       <CartItem {...items} />
-      <CartItem {...items} />
-      <CartItem {...items} />
-      <CartItem {...items} />
-      <CartItem {...items} />
-      <CartItem {...items} />
       <CartItemButton />
     </>
   );

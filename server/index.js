@@ -10,6 +10,7 @@ const connectDB = require("./lib/db/connect");
 const userRouter = require("./routes/user");
 const productsRouter = require("./routes/products");
 const articleRouter = require("./routes/article");
+const cartsRouter = require("./routes/cart");
 
 app.use(cors());
 app.use(express.json());
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1", userRouter);
 app.use("/api/v1/products", productsRouter);
 app.use("/api/v1/article", articleRouter);
+app.use("/api/v1/cart", cartsRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorMiddleware);

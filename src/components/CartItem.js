@@ -27,11 +27,11 @@ function CartItem({
   return (
     <>
       <div className="container-items">
+        <div className="title">
+          <h3>Items</h3>
+        </div>
         <div className="container-form">
           <div className="container_box">
-            <div className="container-checkbox">
-              <input type="checkbox" />
-            </div>
             <div className="container-image">
               <img src={img} alt={img} />
             </div>
