@@ -1,0 +1,7 @@
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  justify-content: center;
+  align-items: center;
+}

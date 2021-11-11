@@ -1,15 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CartItem from "../CartItem";
 import CartItemButton from "../CartItemButton";
-import { items } from "./Data";
+import EmptyCart from "../EmptyCart";
+import { cartIcon, emptyCart } from "./Data";
 
-function cart() {
+function Cart() {
+  useEffect(() => {
+    fetchItems();
+  }, []);
+  const [items, setItems] = useState([]);
+
+  const requestOptions = {
+    method: "GET",
+  };
+
+  const fetchItems = async () => {
+    const data = await fetch(
+      "http://localhost:5000/api/v1/cart/",
+      requestOptions
+    );
+    const items = await data.json();
+    const featured = items.carts.filter(
+      (item) => item.userId == localStorage.getItem("id")
+    );
+    setItems(featured);
+  };
+
+  if (items.length === 0) {
+    return (
+      <>
+        <EmptyCart {...emptyCart} />
+      </>
+    );
+  }
+
   return (
     <>
-      <CartItem {...items} />
+      <div style={{ minHeight: "55vh" }}>
+        <CartItem item={items} {...cartIcon} />
+      </div>
       <CartItemButton />
     </>
   );
 }
 
-export default cart;
+export default Cart;

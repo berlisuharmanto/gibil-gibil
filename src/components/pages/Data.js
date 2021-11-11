@@ -189,7 +189,7 @@ export const recommendation = {
   price5: "Rp 100.000",
 };
 
-export const items = {
+export const cartIcon = {
   img: "images/items/medias/Frame 13.png",
   title: "Aquarium pump",
   variation: "black",
@@ -197,4 +197,8 @@ export const items = {
   plusIcon: "images/plus.svg",
   minusIcon: "images/minus.svg",
   removeIcon: "images/remove.svg",
+};
+
+export const emptyCart = {
+  img: "images/EmptyCart.svg",
 };

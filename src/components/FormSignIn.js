@@ -52,7 +52,8 @@ function FormSignIn({
             return null;
           }
 
-          const { name, token } = result;
+          const { id, name, token } = result;
+          localStorage.setItem("id", id);
           localStorage.setItem("name", name);
           localStorage.setItem("token", token);
           history.push("/");

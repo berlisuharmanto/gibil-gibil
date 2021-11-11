@@ -29,7 +29,7 @@ function DetailPurchase() {
   return (
     <>
       <HeroDetailPurchase item={item} specs={specs} />
-      <HeroVariation item={item} />
+      <HeroVariation />
       <HeroRecomendation />
     </>
   );

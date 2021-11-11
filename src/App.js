@@ -13,6 +13,7 @@ import SignUp from "./components/pages/SignUp";
 import Cart from "./components/pages/Cart";
 import Settings from "./components/pages/Settings";
 import ScrollToTop from "./components/actions/ScrollToTop";
+import PaymentDetails from "./components/pages/PaymentDetails";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/purchase" exact component={Purchase} />
         <Route path="/purchase/:id" component={DetailPurchase} />
         <Route path="/cart" exact component={Cart} />
+        <Route path="/paymentdetails" exact component={PaymentDetails} />
         <Route path="/settings" exact component={Settings} />
       </Switch>
       <Footer />

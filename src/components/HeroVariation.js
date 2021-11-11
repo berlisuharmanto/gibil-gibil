@@ -1,21 +1,54 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import "./HeroVariation.css";
 
 function HeroVariation({ item }) {
   useEffect(() => {
+    fetchProds();
     setLogin(localStorage.getItem("token"));
   }, [localStorage.getItem("token")]);
 
+  const { id } = useParams();
+  const [prod, setProd] = useState({});
+  const [login, setLogin] = useState();
+  const [userId, setUserId] = useState(localStorage.getItem("id"));
+  const [prodName, setProdName] = useState();
+  const [prodId, setProdId] = useState();
+  const [prodImage, setProdImage] = useState();
+  const [price, setPrice] = useState();
+  const [quantity, setQuantity] = useState();
+
+  const fetchProds = async () => {
+    const fetchProd = await fetch(
+      `http://localhost:5000/api/v1/products/${id}`
+    );
+    const prod = await fetchProd.json();
+
+    console.log(prod.data);
+    setUserId(localStorage.getItem("id"));
+    setProd(prod.data);
+    setProdName(prod.data.name);
+    setProdId(prod.data._id);
+    setProdImage(prod.data.prodImage);
+    setPrice(prod.data.price);
+    setQuantity(1);
+    console.log(prod.data._id);
+  };
+
   let history = useHistory();
 
-  const [login, setLogin] = useState(localStorage.getItem("token"));
-
-  function addToCart(e) {
+  function addToCart() {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    const raw = JSON.stringify({});
+    const raw = JSON.stringify({
+      userId,
+      prodId,
+      prodName,
+      prodImage,
+      price,
+      quantity,
+    });
 
     const requestOptions = {
       method: "POST",
@@ -26,7 +59,9 @@ function HeroVariation({ item }) {
 
     fetch("http://localhost:5000/api/v1/cart/add", requestOptions)
       .then((response) => response.json())
-      .then((result) => history.push("/cart"))
+      .then((result) => {
+        console.log(result);
+      })
       .catch((error) => console.log("error", error));
     history.push("/cart");
   }
@@ -53,7 +88,7 @@ function HeroVariation({ item }) {
       <div className="hero_variation_main">
         <div className="variation_container">
           <div className="transaction">
-            <button onClick={(e) => addToCart(e)}>Add to cart</button>
+            <button onClick={() => addToCart()}>Add to cart</button>
             <button>Buy Now</button>
           </div>
         </div>
