@@ -1,6 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./SettingsContent.css";
+import Modal from "react-modal";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    width: "20%",
+    borderRadius: "10px",
+  },
+};
 
 function SettingsContent({
   settingsTitle,
@@ -25,6 +39,19 @@ function SettingsContent({
     console.log("WHY IS IT NOT WORKING???????");
     history.push("/");
   };
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {}
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   if (!login) {
     return (
@@ -80,8 +107,41 @@ function SettingsContent({
   }
   return (
     <>
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <h2
+          style={{
+            color: "#000",
+            textAlign: "center",
+            fontSize: "20px",
+            padding: "50px 0",
+          }}
+        >
+          Are you sure you want to log out?
+        </h2>
+        <div
+          className="modal-buttons"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            padding: "30px 20px",
+          }}
+        >
+          <button className="yes-button" onClick={(e) => logout(e)}>
+            Yes
+          </button>
+          <button className="no-button" onClick={closeModal}>
+            No
+          </button>
+        </div>
+      </Modal>
       <div className="content">
-        <form onSubmit={(e) => logout(e)}>
+        <>
           <table>
             <tr>
               <b className="title">{settingsTitle}</b>
@@ -120,12 +180,12 @@ function SettingsContent({
             </tr>
           </table>
           <div className="logout">
-            <button type="submit" className="button">
+            <button onClick={openModal} className="button">
               {" "}
               Log Out{" "}
             </button>
           </div>
-        </form>
+        </>
       </div>
     </>
   );

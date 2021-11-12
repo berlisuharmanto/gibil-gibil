@@ -4,9 +4,7 @@
 
 .content {
   display: flex;
-}
-
-.content form {
+  flex-direction: column;
   width: 90%;
 }
 
@@ -89,4 +87,51 @@
   color: white;
   transition: 0.2s;
   cursor: pointer;
+}
+
+.modal-buttons .yes-button {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  border: 1px solid red;
+  border-radius: 10px;
+  cursor: pointer;
+  color: red;
+  background-color: white;
+  font-size: 20px;
+  padding: 15px 40px 15px 40px;
+}
+
+.modal-buttons .yes-button:hover {
+  border: 1px solid red;
+  border-radius: 10px;
+  color: #fff;
+  background-color: red;
+  font-size: 20px;
+  padding: 15px 40px 15px 40px;
+}
+
+.modal-buttons .no-button {
+  display: flex;
+  width: 150px;
+  height: 50px;
+  place-items: center;
+  justify-content: center;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #7879f1;
+  font-size: 20px;
+  padding: 15px 40px 15px 40px;
+}
+
+.modal-buttons .no-button:hover {
+  border-radius: 10px;
+  color: #fff;
+  background-color: #a5a6f6;
+  font-size: 20px;
+  padding: 15px 40px 15px 40px;
 }
