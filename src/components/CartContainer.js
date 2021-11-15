@@ -11,6 +11,27 @@ function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
     if (counter > 1) {
       setCounter(counter - 1);
       setPricer(pricer - item.price);
+
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      let raw = JSON.stringify({
+        cartId: item._id,
+        userId: item.userId,
+        quantity: counter - 1,
+      });
+
+      const requestOptions = {
+        method: "PUT",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch("http://localhost:5000/api/v1/cart/update", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
     }
   };
 
@@ -18,7 +39,50 @@ function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
     if (counter < 100) {
       setCounter(counter + 1);
       setPricer(pricer + item.price);
+
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      let raw = JSON.stringify({
+        cartId: item._id,
+        userId: item.userId,
+        quantity: counter + 1,
+      });
+
+      const requestOptions = {
+        method: "PUT",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch("http://localhost:5000/api/v1/cart/update", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
     }
+  };
+
+  const removeItem = () => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    let raw = JSON.stringify({
+      userId: item.userId,
+      cartId: item._id,
+    });
+
+    const requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:5000/api/v1/cart/delete", requestOptions)
+      .then((response) => response.json())
+      .then((result) => window.location.reload())
+      .catch((error) => console.log("error", error));
   };
 
   const location = useLocation();
@@ -61,7 +125,7 @@ function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
         <div className="container_box">
           <div className="container-image">
             <img
-              style={{ maxHeight: "130px" }}
+              style={{ maxHeight: "130px", maxWidth: "160px" }}
               src={item.prodImage}
               alt={item.prodImage}
             />
@@ -84,7 +148,7 @@ function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
                 <button onClick={increment} className="amount-icon">
                   <img src={plusIcon} />
                 </button>
-                <button className="remove-icon">
+                <button onClick={removeItem} className="remove-icon">
                   <img src={removeIcon} />
                 </button>
               </div>

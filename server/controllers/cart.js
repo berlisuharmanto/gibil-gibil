@@ -21,11 +21,10 @@ const addToCarts = async (req, res) => {
 };
 
 const updateCarts = async (req, res) => {
-  const { userId, prodId, price, quantity } = req.body;
+  const { userId, cartId, quantity } = req.body;
   const updatedCart = await Carts.findOneAndUpdate(
-    { userId, prodId },
+    { userId, _id: cartId },
     {
-      price,
       quantity,
     },
     { new: true }
@@ -37,10 +36,10 @@ const updateCarts = async (req, res) => {
 };
 
 const deleteCarts = async (req, res) => {
-  const { userId, prodId } = req.body;
-  const deletedCart = await Carts.findOneAndDelete({ userId, prodId });
+  const { cartId, userId } = req.body;
+  const deletedCart = await Carts.findOneAndDelete({ userId, _id: cartId });
   if (deletedCart) {
-    return res.status(200).json({ deletedCart });
+    return res.status(200).json({ msg: `deleted ${deletedCart}` });
   }
   return res.status(404).json({ msg: "not found" });
 };
