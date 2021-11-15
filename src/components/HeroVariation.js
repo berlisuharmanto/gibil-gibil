@@ -61,9 +61,9 @@ function HeroVariation({ item }) {
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
+        history.push("/cart");
       })
       .catch((error) => console.log("error", error));
-    history.push("/cart");
   }
 
   if (!login) {

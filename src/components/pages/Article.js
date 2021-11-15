@@ -9,7 +9,10 @@ function Article() {
 
   useEffect(() => {
     fetchItems();
-  }, []);
+    setIsLoading(false);
+  }, [id]);
+
+  const [isLoading, setIsLoading] = useState(true);
 
   const [item, setItem] = useState({});
 
@@ -17,11 +20,13 @@ function Article() {
     const fetchItem = await fetch(`http://localhost:5000/api/v1/article/${id}`);
     const item = await fetchItem.json();
 
-    console.log(item.data);
     setItem(item.data);
   };
 
-  console.log(item);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <HeroArticle item={item} {...articleContent} />

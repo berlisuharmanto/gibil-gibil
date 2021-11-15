@@ -1,3 +1,7 @@
+.container_box {
+  margin-bottom: 30px;
+}
+
 .container-items {
   display: flex;
   flex-direction: column;

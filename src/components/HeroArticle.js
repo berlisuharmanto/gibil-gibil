@@ -8,9 +8,12 @@ function HeroArticle({ banner, item }) {
   const { id } = useParams();
   const [recommendation, setRecommendation] = useState([]);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     fetchRecommendation();
-  }, []);
+    setIsLoading(false);
+  }, [id]);
 
   const fetchRecommendation = async () => {
     const data = await fetch("http://localhost:5000/api/v1/article/");
@@ -18,7 +21,10 @@ function HeroArticle({ banner, item }) {
     const itemsFilter = items.article.filter((item) => item._id !== id);
     setRecommendation(itemsFilter);
   };
-  console.log(item);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <div className="hero_article_main">

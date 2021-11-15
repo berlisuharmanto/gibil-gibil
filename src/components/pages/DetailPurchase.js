@@ -7,10 +7,15 @@ import { variation } from "./Data";
 
 function DetailPurchase() {
   const { id } = useParams();
+  console.log(id);
+
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchItems();
-  }, []);
+    fetchRecommendation();
+    setIsLoading(false);
+  }, [id]);
 
   const [item, setItem] = useState({});
 
@@ -26,11 +31,25 @@ function DetailPurchase() {
     setItem(item.data);
     setSpecs(item.data.prodSpec);
   };
+
+  const [recommendation, setRecommendation] = useState([]);
+
+  const fetchRecommendation = async () => {
+    const data = await fetch("http://localhost:5000/api/v1/products/");
+    const items = await data.json();
+    const itemsFilter = items.products.filter((item) => item._id !== id);
+    setRecommendation(itemsFilter);
+  };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <HeroDetailPurchase item={item} specs={specs} />
       <HeroVariation />
-      <HeroRecomendation />
+      <HeroRecomendation item={recommendation} />
     </>
   );
 }

@@ -11,7 +11,11 @@ function HeroAside({ title, item }) {
         </div>
         <div className="hero_aside_content">
           {item.map((item) => (
-            <Link className="hero_article_card" to="/article" key={item._id}>
+            <Link
+              className="hero_article_card"
+              to={`/trend/${item._id}`}
+              key={item._id}
+            >
               <img src={item.img[0]} alt={item.img[0]} />
               <div className="text-wrapper">
                 <p>{item.title}</p>
