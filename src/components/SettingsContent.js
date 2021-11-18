@@ -40,7 +40,6 @@ function SettingsContent({
     history.push("/");
   };
 
-  let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {

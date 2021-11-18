@@ -94,7 +94,7 @@ function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
           <div className="container_box">
             <div className="container-image">
               <img
-                style={{ maxHeight: "130px" }}
+                style={{ maxHeight: "130px", maxWidth: "160px" }}
                 src={item.prodImage}
                 alt={item.prodImage}
               />

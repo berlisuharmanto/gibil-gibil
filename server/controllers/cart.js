@@ -44,9 +44,19 @@ const deleteCarts = async (req, res) => {
   return res.status(404).json({ msg: "not found" });
 };
 
+const clearCarts = async (req, res) => {
+  const { userId } = req.body;
+  const deletedCart = await Carts.deleteMany({ userId });
+  if (deletedCart) {
+    return res.status(200).json({ msg: `deleted ${deletedCart}` });
+  }
+  return res.status(404).json({ msg: "not found" });
+};
+
 module.exports = {
   getsAllCarts,
   addToCarts,
   updateCarts,
   deleteCarts,
+  clearCarts,
 };
