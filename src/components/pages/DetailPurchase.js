@@ -7,7 +7,6 @@ import { variation } from "./Data";
 
 function DetailPurchase() {
   const { id } = useParams();
-  console.log(id);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -27,7 +26,6 @@ function DetailPurchase() {
     );
     const item = await fetchItem.json();
 
-    console.log(item.data);
     setItem(item.data);
     setSpecs(item.data.prodSpec);
   };

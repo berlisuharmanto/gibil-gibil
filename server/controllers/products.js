@@ -69,13 +69,61 @@ const createProduct = async (req, res) => {
 };
 
 const updateProduct = async (req, res) => {
-  const { price, numOfProducts } = req.body;
+  const { name, price, numOfProducts, prodImage, prodBg, prodDesc, prodSpec } =
+    req.body;
 
   const product = await Products.findByIdAndUpdate(
     req.params._id,
     {
+      name,
       price,
       numOfProducts,
+      prodImage,
+      prodBg,
+      prodDesc,
+      prodSpec,
+    },
+    { new: true }
+  );
+
+  if (product) {
+    res.send({
+      status: "success",
+      message: "Product updated",
+      data: product,
+    });
+  } else {
+    res.send({
+      status: "warning",
+      message: "Product not found",
+    });
+  }
+};
+
+const deleteProduct = async (req, res) => {
+  const product = await Products.findByIdAndDelete(req.params._id);
+
+  if (product) {
+    res.send({
+      status: "success",
+      message: "Product deleted",
+      data: product,
+    });
+  } else {
+    res.send({
+      status: "warning",
+      message: "Product not found",
+    });
+  }
+};
+
+const buyProduct = async (req, res) => {
+  const { prodId, quantity, numOfProducts } = req.body;
+
+  const product = await Products.findByIdAndUpdate(
+    prodId,
+    {
+      numOfProducts: numOfProducts - quantity,
     },
     { new: true }
   );
@@ -100,4 +148,6 @@ module.exports = {
   getsAllProductsStatic,
   createProduct,
   updateProduct,
+  deleteProduct,
+  buyProduct,
 };

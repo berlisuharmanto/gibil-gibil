@@ -6,7 +6,6 @@ import "./HeroRecommendation.css";
 
 function HeroRecomendation({ item }) {
   const { id } = useParams();
-  console.log(id);
 
   return (
     <>

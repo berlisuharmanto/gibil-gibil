@@ -21,7 +21,6 @@ function Trend() {
     const featuredFilter = featured.article.filter(
       (item) => item.featured === true
     );
-    console.log(featuredFilter);
     setFeatured(featuredFilter);
   };
 

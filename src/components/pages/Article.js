@@ -5,7 +5,6 @@ import HeroArticle from "../HeroArticle";
 
 function Article() {
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     fetchItems();

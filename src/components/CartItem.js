@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import CartContainer from "./CartContainer";
 import "./CartItem.css";
@@ -24,7 +24,25 @@ const customStyles = {
 
 const date = new Date();
 
-function CartItem({ item, minusIcon, plusIcon, removeIcon }) {
+function CartItem({ item }) {
+  useEffect(() => {
+    fetchItems();
+  }, []);
+  const [product, setProduct] = useState([]);
+
+  const requestOptions = {
+    method: "GET",
+  };
+
+  const fetchItems = async () => {
+    const data = await fetch(
+      "http://localhost:5000/api/v1/products/",
+      requestOptions
+    );
+    const items = await data.json();
+    setProduct(items.products);
+  };
+
   const location = useLocation();
   const [shipPrice, setShipPrice] = useState(12000);
   let history = useHistory();
@@ -45,8 +63,40 @@ function CartItem({ item, minusIcon, plusIcon, removeIcon }) {
     history.push("/");
   };
 
-  function openModal() {
-    localStorage.setItem("total", harga + shipPrice);
+  function buy() {
+    item.forEach(decreaseQuantity);
+  }
+
+  function decreaseQuantity(item) {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    console.log(item.quantity);
+
+    const items = product.filter((product) => product._id === item.prodId);
+
+    let raw = JSON.stringify({
+      prodId: item.prodId,
+      quantity: item.quantity,
+      numOfProducts: items.map((prod) => {
+        return prod.numOfProducts;
+      }),
+    });
+
+    const requestOptions = {
+      method: "PUT",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:5000/api/v1/products/buy", requestOptions)
+      .then((response) => response.json())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+  }
+
+  function clearCarts() {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -65,6 +115,12 @@ function CartItem({ item, minusIcon, plusIcon, removeIcon }) {
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+  }
+
+  function openModal() {
+    localStorage.setItem("total", harga + shipPrice);
+    buy();
+    clearCarts();
     setIsOpen(true);
   }
 

@@ -24,7 +24,6 @@ function HeroVariation({ item }) {
     );
     const prod = await fetchProd.json();
 
-    console.log(prod.data);
     setUserId(localStorage.getItem("id"));
     setProd(prod.data);
     setProdName(prod.data.name);
@@ -32,7 +31,6 @@ function HeroVariation({ item }) {
     setProdImage(prod.data.prodImage);
     setPrice(prod.data.price);
     setQuantity(1);
-    console.log(prod.data._id);
   };
 
   let history = useHistory();
