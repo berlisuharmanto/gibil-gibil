@@ -117,6 +117,33 @@ function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
         </div>
       </>
     );
+  } else if (location.pathname === `/paymentdetails/${item._id}`) {
+    return (
+      <>
+        <div className="container-form">
+          <div className="container_box">
+            <div className="container-image">
+              <img
+                style={{ maxHeight: "130px", maxWidth: "160px" }}
+                src={item.prodImage}
+                alt={item.prodImage}
+              />
+            </div>
+            <div className="container-descrip">
+              <h1>{item.name}</h1>
+              <h2>Quantity : 1</h2>
+            </div>
+            <div className="container-option">
+              <div className="container-amount">
+                <div className="container-price">
+                  <h1>Price Rp. {item.price ? formatK(item.price * 1) : 0}</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
   }
 
   return (

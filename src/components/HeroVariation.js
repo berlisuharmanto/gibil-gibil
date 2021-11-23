@@ -87,7 +87,9 @@ function HeroVariation({ item }) {
         <div className="variation_container">
           <div className="transaction">
             <button onClick={() => addToCart()}>Add to cart</button>
-            <button>Buy Now</button>
+            <button onClick={() => history.push(`/paymentdetails/${prod._id}`)}>
+              Buy Now
+            </button>
           </div>
         </div>
       </div>

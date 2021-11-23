@@ -14,6 +14,7 @@ import Cart from "./components/pages/Cart";
 import Settings from "./components/pages/Settings";
 import ScrollToTop from "./components/actions/ScrollToTop";
 import PaymentDetails from "./components/pages/PaymentDetails";
+import BuyNow from "./components/pages/BuyNow";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/purchase/:id" component={DetailPurchase} />
         <Route path="/cart" exact component={Cart} />
         <Route path="/paymentdetails" exact component={PaymentDetails} />
+        <Route path="/paymentdetails/:id" exact component={BuyNow} />
         <Route path="/settings" exact component={Settings} />
       </Switch>
       <Footer />
