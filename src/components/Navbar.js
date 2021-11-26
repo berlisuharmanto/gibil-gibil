@@ -86,7 +86,7 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="icon" to="/settings">
+                  <Link className="icon" to="/signin">
                     <img src={process.env.PUBLIC_URL + "images/gear.svg"} />{" "}
                   </Link>
                 </li>

@@ -27,11 +27,27 @@ const date = new Date();
 function CartItem({ item }) {
   useEffect(() => {
     fetchItems();
+    fetchUser();
   }, []);
   const [product, setProduct] = useState([]);
 
   const requestOptions = {
     method: "GET",
+  };
+
+  const [user, setUser] = useState({});
+
+  const fetchUser = async () => {
+    const data = await fetch(
+      "http://localhost:5000/api/v1/user/",
+      requestOptions
+    );
+    const user = await data.json();
+    const userLogin = user.filter(
+      (user) => user._id == localStorage.getItem("id")
+    );
+    setUser(userLogin[0]);
+    console.log(userLogin[0].address);
   };
 
   const fetchItems = async () => {
@@ -265,8 +281,14 @@ function CartItem({ item }) {
                 }}
               >
                 <div className="container-address" style={{ width: "100%" }}>
-                  <b style={{ fontSize: "20px", color: "#575757" }}>
-                    Jln. Rawa Rawa No. 7 Rt. 02/09, 032132
+                  <b
+                    style={{
+                      fontSize: "20px",
+                      color: "#575757",
+                      maxWidth: "224px",
+                    }}
+                  >
+                    {user.address}
                   </b>
                 </div>
                 <div
@@ -711,9 +733,21 @@ function CartItem({ item }) {
                   marginRight: "80px",
                 }}
               >
-                <div className="container-address" style={{ width: "100%" }}>
-                  <b style={{ fontSize: "20px", color: "#575757" }}>
-                    Jln. Rawa Rawa No. 7 Rt. 02/09, 032132
+                <div
+                  className="container-address"
+                  style={{
+                    maxWidth: "224px",
+                  }}
+                >
+                  <b
+                    style={{
+                      fontSize: "20px",
+                      color: "#575757",
+                      maxWidth: "224px",
+                      display: "inline-block",
+                    }}
+                  >
+                    {user.address}
                   </b>
                 </div>
                 <div

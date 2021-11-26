@@ -75,8 +75,19 @@ const dashboard = async (req, res) => {
   });
 };
 
+const getUser = async (req, res) => {
+  const user = await User.find(req.query);
+
+  if (!user) {
+    throw new loginAPIError("User not found", 404);
+  }
+
+  res.status(200).json(user);
+};
+
 module.exports = {
   login,
   dashboard,
   register,
+  getUser,
 };
