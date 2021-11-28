@@ -64,26 +64,18 @@ function SettingsContent({
               <tr>
                 <td>{settingsCont01}</td>
                 <td className="edit">
-                  <Link to="/">
+                  <Link to="/edit">
                     Edit <img src={process.env.PUBLIC_URL + "/edit_pen.svg"} />{" "}
                   </Link>
                 </td>
               </tr>
               <tr>
                 <td>{settingsCont02}</td>
-                <td className="edit">
-                  <Link to="/">
-                    Edit <img src={process.env.PUBLIC_URL + "/edit_pen.svg"} />{" "}
-                  </Link>
-                </td>
+                <td className="edit"></td>
               </tr>
               <tr>
                 <td>{settingsCont03}</td>
-                <td className="edit">
-                  <Link to="/">
-                    Edit <img src={process.env.PUBLIC_URL + "/edit_pen.svg"} />{" "}
-                  </Link>
-                </td>
+                <td className="edit"></td>
               </tr>
               <tr>
                 <td colspan="2" className="payment_method">
@@ -148,26 +140,18 @@ function SettingsContent({
             <tr>
               <td>{settingsCont01}</td>
               <td className="edit">
-                <Link to="/">
+                <Link to="/edit">
                   Edit <img src={process.env.PUBLIC_URL + "/edit_pen.svg"} />{" "}
                 </Link>
               </td>
             </tr>
             <tr>
               <td>{settingsCont02}</td>
-              <td className="edit">
-                <Link to="/">
-                  Edit <img src={process.env.PUBLIC_URL + "/edit_pen.svg"} />{" "}
-                </Link>
-              </td>
+              <td className="edit"></td>
             </tr>
             <tr>
               <td>{settingsCont03}</td>
-              <td className="edit">
-                <Link to="/">
-                  Edit <img src={process.env.PUBLIC_URL + "/edit_pen.svg"} />{" "}
-                </Link>
-              </td>
+              <td className="edit"></td>
             </tr>
             <tr>
               <td colspan="2" className="payment_method">

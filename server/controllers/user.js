@@ -75,14 +75,39 @@ const dashboard = async (req, res) => {
   });
 };
 
-const getUser = async (req, res) => {
-  const user = await User.find(req.query);
+const updateUser = async (req, res) => {
+  const { userId, email, name, password, address } = req.body;
+  const user = await User.findByIdAndUpdate(
+    userId,
+    {
+      email,
+      name,
+      password,
+      address,
+    },
+    { new: true }
+  );
 
   if (!user) {
     throw new loginAPIError("User not found", 404);
   }
 
-  res.status(200).json(user);
+  res.send({
+    msg: "User updated",
+  });
+};
+
+const getUser = async (req, res) => {
+  const user = await User.findById(req.params._id);
+
+  if (!user) {
+    throw new loginAPIError("User not found", 404);
+  }
+
+  res.send({
+    msg: "User found",
+    user,
+  });
 };
 
 module.exports = {
@@ -90,4 +115,5 @@ module.exports = {
   dashboard,
   register,
   getUser,
+  updateUser,
 };

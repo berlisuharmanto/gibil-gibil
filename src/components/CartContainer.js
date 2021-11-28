@@ -4,6 +4,7 @@ import formatK from "./actions/kFormatter";
 
 function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
   const [counter, setCounter] = useState(item.quantity);
+  console.log(counter);
 
   const [pricer, setPricer] = useState(item.price * counter);
 

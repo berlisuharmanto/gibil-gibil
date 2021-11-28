@@ -39,15 +39,11 @@ function CartItem({ item }) {
 
   const fetchUser = async () => {
     const data = await fetch(
-      "http://localhost:5000/api/v1/user/",
+      `http://localhost:5000/api/v1/user/${localStorage.getItem("id")}`,
       requestOptions
     );
-    const user = await data.json();
-    const userLogin = user.filter(
-      (user) => user._id == localStorage.getItem("id")
-    );
-    setUser(userLogin[0]);
-    console.log(userLogin[0].address);
+    const userData = await data.json();
+    setUser(userData.user);
   };
 
   const fetchItems = async () => {
