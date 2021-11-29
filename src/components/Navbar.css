@@ -7,7 +7,6 @@ nav {
   font-size: 24px;
   font-weight: 700;
   background-color: #fff;
-  z-index: 5;
 }
 
 nav ul {
@@ -27,6 +26,10 @@ nav a,
 nav li {
   padding: 18px 0;
   height: 100%;
+}
+
+.Overlay {
+  background: none;
 }
 
 .navbar-container {

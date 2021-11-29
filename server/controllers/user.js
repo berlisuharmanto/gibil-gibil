@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
+// const bcrypt = require("bcrypt");
 const loginAPIError = require("../errors/loginErrors");
 
 const login = async (req, res) => {
@@ -50,6 +51,50 @@ const register = async (req, res) => {
     password,
     name,
     address,
+    isAdmin: false,
+  });
+
+  const token = jwt.sign({ email }, process.env.JWT_SECRET, {
+    expiresIn: "1d",
+  });
+
+  newUser.token = token;
+
+  await newUser.save();
+
+  return res
+    .status(201)
+    .json({ name: newUser.name, id: newUser.id, token: token });
+};
+
+const registerAdmin = async (req, res) => {
+  const { email, password, name, address } = req.body;
+
+  if (!(email && password && name && address)) {
+    res.status(400).json({ msg: "all fields are required" });
+  }
+
+  const checkIdentical = async (condition, value) => {
+    const userExist = await User.findOne({ [condition]: value });
+
+    if (userExist) {
+      return true;
+    }
+    return false;
+  };
+
+  const userExist = await checkIdentical("email", email);
+
+  if (userExist) {
+    throw new loginAPIError("User already exist", 409);
+  }
+
+  const newUser = new User({
+    email: email.toLowerCase(),
+    password,
+    name,
+    address,
+    isAdmin: true,
   });
 
   const token = jwt.sign({ email }, process.env.JWT_SECRET, {
@@ -114,6 +159,7 @@ module.exports = {
   login,
   dashboard,
   register,
+  registerAdmin,
   getUser,
   updateUser,
 };
