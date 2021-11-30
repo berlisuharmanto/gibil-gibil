@@ -1,6 +1,6 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 const loginAPIError = require("../errors/loginErrors");
 
 const login = async (req, res) => {
@@ -10,9 +10,11 @@ const login = async (req, res) => {
     throw new loginAPIError("Please provide email and password", 400);
   }
 
-  const user = await User.findOne({ email, password });
+  const user = await User.findOne({ email });
 
-  if (user) {
+  const isMatch = await bcrypt.compare(password, user.password);
+
+  if (user && isMatch) {
     const token = jwt.sign({ email }, process.env.JWT_SECRET, {
       expiresIn: "1d",
     });
@@ -25,9 +27,9 @@ const login = async (req, res) => {
 };
 
 const register = async (req, res) => {
-  const { email, password, name, address } = req.body;
+  const { email, plainPassword, name, address } = req.body;
 
-  if (!(email && password && name && address)) {
+  if (!(email && plainPassword && name && address)) {
     res.status(400).json({ msg: "all fields are required" });
   }
 
@@ -39,6 +41,8 @@ const register = async (req, res) => {
     }
     return false;
   };
+
+  const password = await bcrypt.hash(plainPassword, 10);
 
   const userExist = await checkIdentical("email", email);
 
@@ -68,9 +72,9 @@ const register = async (req, res) => {
 };
 
 const registerAdmin = async (req, res) => {
-  const { email, password, name, address } = req.body;
+  const { email, plainPassword, name, address } = req.body;
 
-  if (!(email && password && name && address)) {
+  if (!(email && plainPassword && name && address)) {
     res.status(400).json({ msg: "all fields are required" });
   }
 
@@ -82,6 +86,8 @@ const registerAdmin = async (req, res) => {
     }
     return false;
   };
+
+  const password = await bcrypt.hash(plainPassword, 10);
 
   const userExist = await checkIdentical("email", email);
 

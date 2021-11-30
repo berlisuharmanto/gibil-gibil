@@ -10,7 +10,7 @@ function Navbar() {
 
   console.log(location.pathname);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const [login, setLogin] = useState(localStorage.getItem("token"));
 
@@ -28,6 +28,7 @@ function Navbar() {
 
   useEffect(() => {
     fetchUser();
+    setLoading(false);
     setLogin(localStorage.getItem("token"));
   }, [localStorage.getItem("token")]);
 
@@ -48,17 +49,18 @@ function Navbar() {
 
   const customStyles = {
     content: {
-      position: "absolute",
+      position: "fixed",
       display: "flex",
       flexDirection: "column",
-      top: "12%",
-      left: "84%",
+      top: "8%",
+      left: "80%",
       right: "auto",
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
       borderRadius: "10px",
-      zIndex: "1",
+      transform: "rotate(360deg)",
+      zIndex: "2",
     },
     overlay: { background: "none" },
   };
@@ -67,7 +69,18 @@ function Navbar() {
     return null;
   }
 
-  if (!login && !loading) {
+  if (loading) {
+    return (
+      <div className="loading">
+        <div className="lds-ellipsis">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    );
+  } else if (!login && !loading) {
     return (
       <>
         <nav>
@@ -149,7 +162,7 @@ function Navbar() {
         </nav>
       </>
     );
-  } else if (user.isAdmin == true) {
+  } else if (user.isAdmin == true && !loading) {
     return (
       <>
         <Modal
@@ -159,13 +172,10 @@ function Navbar() {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <Link style={{ padding: "5px", color: "#000" }}>
+          <Link to="/adminproducts" style={{ padding: "5px", color: "#000" }}>
             <h3>Product</h3>
           </Link>
-          <Link style={{ padding: "5px", color: "#000" }}>
-            <h3>Bundle</h3>
-          </Link>
-          <Link style={{ padding: "5px", color: "#000" }}>
+          <Link to="/adminarticles" style={{ padding: "5px", color: "#000" }}>
             <h3>Article</h3>
           </Link>
         </Modal>

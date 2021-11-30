@@ -3,8 +3,10 @@ import HeroTrendBanner from "../HeroTrendBanner";
 import HeroSlider from "../HeroSlider";
 import { trendBanner } from "./Data";
 import HeroCarousel from "../HeroCarousel";
+import { useParams } from "react-router";
+import AddButton from "../AddButton";
 
-function Trend() {
+function AdminArticles() {
   useEffect(() => {
     fetchItems();
     fetchFeatured();
@@ -31,10 +33,10 @@ function Trend() {
   return (
     <div>
       <HeroTrendBanner {...trendBanner} />
-      <HeroCarousel item={featured} />
+      <AddButton />
       <HeroSlider item={item} />
     </div>
   );
 }
 
-export default Trend;
+export default AdminArticles;

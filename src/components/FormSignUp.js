@@ -44,7 +44,7 @@ function FormSignUp({
 
       const raw = JSON.stringify({
         email,
-        password,
+        plainPassword: password,
         name,
         address,
       });

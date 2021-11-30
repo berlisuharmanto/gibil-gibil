@@ -16,11 +16,13 @@ import ScrollToTop from "./components/actions/ScrollToTop";
 import PaymentDetails from "./components/pages/PaymentDetails";
 import BuyNow from "./components/pages/BuyNow";
 import Edit from "./components/pages/Edit";
+import AdminProducts from "./components/pages/AdminBundle";
+import AdminArticles from "./components/pages/AdminArticles";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navbar style={{ zIndex: "1" }} />
       <ScrollToTop />
       <Switch>
         <Route path="/" exact component={Home} />
@@ -36,6 +38,8 @@ function App() {
         <Route path="/paymentdetails/:id" exact component={BuyNow} />
         <Route path="/settings" exact component={Settings} />
         <Route path="/edit" exact component={Edit} />
+        <Route path="/adminproducts" exact component={AdminProducts} />
+        <Route path="/adminarticles" exact component={AdminArticles} />
       </Switch>
       <Footer />
     </Router>
