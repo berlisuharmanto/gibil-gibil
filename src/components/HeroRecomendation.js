@@ -13,7 +13,7 @@ function HeroRecomendation({ item }) {
         <div className="rec_content">
           <h1>Recommendation</h1>
           <div className="card_layout">
-            {item.map((item) => (
+            {item.slice(0, 5).map((item) => (
               <Link
                 key={item._id}
                 to={`/purchase/${item._id}`}

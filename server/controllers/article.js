@@ -23,7 +23,8 @@ const getsAllArticle = async (req, res) => {
 };
 
 const createArticle = async (req, res) => {
-  const { title, img, featured, preview, article } = req.body;
+  const { title, img, preview, article } = req.body;
+  const featured = false;
 
   const newArticle = new Article({
     title,

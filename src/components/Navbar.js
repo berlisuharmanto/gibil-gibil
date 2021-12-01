@@ -172,10 +172,18 @@ function Navbar() {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <Link to="/adminproducts" style={{ padding: "5px", color: "#000" }}>
+          <Link
+            to="/adminproducts"
+            onClick={closeModal}
+            style={{ padding: "5px", color: "#000" }}
+          >
             <h3>Product</h3>
           </Link>
-          <Link to="/adminarticles" style={{ padding: "5px", color: "#000" }}>
+          <Link
+            to="/adminarticles"
+            onClick={closeModal}
+            style={{ padding: "5px", color: "#000" }}
+          >
             <h3>Article</h3>
           </Link>
         </Modal>

@@ -18,6 +18,7 @@ import BuyNow from "./components/pages/BuyNow";
 import Edit from "./components/pages/Edit";
 import AdminProducts from "./components/pages/AdminBundle";
 import AdminArticles from "./components/pages/AdminArticles";
+import AddArticle from "./components/pages/AddArticle";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/edit" exact component={Edit} />
         <Route path="/adminproducts" exact component={AdminProducts} />
         <Route path="/adminarticles" exact component={AdminArticles} />
+        <Route path="/admin-add-article" exact component={AddArticle} />
       </Switch>
       <Footer />
     </Router>
