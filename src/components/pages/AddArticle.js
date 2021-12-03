@@ -2,9 +2,10 @@ import React from "react";
 import AdminArticleForm from "../AdminArticleForm";
 
 function AddArticle() {
+  const item = "";
   return (
     <>
-      <AdminArticleForm />
+      <AdminArticleForm item={item} />
     </>
   );
 }

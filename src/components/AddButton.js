@@ -11,7 +11,18 @@ function AddButton() {
       <>
         <button
           className="admin-button"
-          onClick={() => history.push("admin-add-article")}
+          onClick={() => history.push("/admin-add-article")}
+        >
+          <img src={process.env.PUBLIC_URL + "/images/add.svg"} alt="" />
+        </button>
+      </>
+    );
+  } else if (location.pathname === "/adminproducts") {
+    return (
+      <>
+        <button
+          className="admin-button"
+          onClick={() => history.push("/admin-add-product")}
         >
           <img src={process.env.PUBLIC_URL + "/images/add.svg"} alt="" />
         </button>

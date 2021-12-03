@@ -16,9 +16,11 @@ import ScrollToTop from "./components/actions/ScrollToTop";
 import PaymentDetails from "./components/pages/PaymentDetails";
 import BuyNow from "./components/pages/BuyNow";
 import Edit from "./components/pages/Edit";
-import AdminProducts from "./components/pages/AdminBundle";
+import AdminProducts from "./components/pages/AdminProducts";
 import AdminArticles from "./components/pages/AdminArticles";
 import AddArticle from "./components/pages/AddArticle";
+import EditArticle from "./components/pages/EditArticle";
+import AddProduct from "./components/pages/AddProduct";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
         <Route path="/adminproducts" exact component={AdminProducts} />
         <Route path="/adminarticles" exact component={AdminArticles} />
         <Route path="/admin-add-article" exact component={AddArticle} />
+        <Route path="/adminarticles/:id" component={EditArticle} />
+        <Route path="/admin-add-product" exact component={AddProduct} />
       </Switch>
       <Footer />
     </Router>

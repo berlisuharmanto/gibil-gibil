@@ -17,7 +17,6 @@ router.route("/:static").get(getsAllProductsStatic);
 router.route("/update").put(updateProduct);
 router.route("/delete").delete(deleteProduct);
 router.route("/buy").put(buyProduct);
-
 router.route("/").post(createProduct);
 
 module.exports = router;

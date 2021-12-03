@@ -19,7 +19,6 @@ const productsSchema = new mongoose.Schema({
   },
   prodBg: {
     type: String,
-    required: [true, "prodBg is required"],
   },
   prodDesc: {
     type: String,
@@ -31,6 +30,10 @@ const productsSchema = new mongoose.Schema({
       required: [true, "prodSpec is required"],
     },
   ],
+  type: {
+    type: String,
+    required: [true, "type is required"],
+  },
 });
 
 module.exports = mongoose.model("Products", productsSchema);
