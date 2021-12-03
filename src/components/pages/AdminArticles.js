@@ -15,7 +15,9 @@ function AdminArticles() {
   const [featured, setFeatured] = useState([]);
 
   const fetchFeatured = async () => {
-    const data = await fetch("http://localhost:5000/api/v1/article/");
+    const data = await fetch(
+      "https://gibil-server.herokuapp.com/api/v1/article/"
+    );
     const featured = await data.json();
     const featuredFilter = featured.article.filter(
       (item) => item.featured === true
@@ -26,7 +28,9 @@ function AdminArticles() {
   const [item, setItem] = useState([]);
 
   const fetchItems = async () => {
-    const data = await fetch("http://localhost:5000/api/v1/article/");
+    const data = await fetch(
+      "https://gibil-server.herokuapp.com/api/v1/article/"
+    );
     const items = await data.json();
     setItem(items.article);
   };

@@ -56,7 +56,10 @@ function FormSignUp({
         redirect: "follow",
       };
 
-      fetch("http://localhost:5000/api/v1/register", requestOptions)
+      fetch(
+        "https://gibil-server.herokuapp.com/api/v1/register",
+        requestOptions
+      )
         .then((response) => response.json())
         .then((result) => {
           const { id, name, token } = result;

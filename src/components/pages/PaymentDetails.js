@@ -13,7 +13,7 @@ function PaymentDetails() {
 
   const fetchItems = async () => {
     const data = await fetch(
-      "http://localhost:5000/api/v1/cart/",
+      "https://gibil-server.herokuapp.com/api/v1/cart/",
       requestOptions
     );
     const items = await data.json();

@@ -20,7 +20,7 @@ function HeroVariation({ item }) {
 
   const fetchProds = async () => {
     const fetchProd = await fetch(
-      `http://localhost:5000/api/v1/products/${id}`
+      `https://gibil-server.herokuapp.com/api/v1/products/${id}`
     );
     const prod = await fetchProd.json();
 
@@ -55,7 +55,7 @@ function HeroVariation({ item }) {
       redirect: "follow",
     };
 
-    fetch("http://localhost:5000/api/v1/cart/add", requestOptions)
+    fetch("https://gibil-server.herokuapp.com/api/v1/cart/add", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

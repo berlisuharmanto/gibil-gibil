@@ -16,7 +16,7 @@ function BuyNow() {
 
   const fetchItems = async () => {
     const fetchItem = await fetch(
-      `http://localhost:5000/api/v1/products/${id}`
+      `https://gibil-server.herokuapp.com/api/v1/products/${id}`
     );
     const item = await fetchItem.json();
 

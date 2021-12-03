@@ -39,7 +39,7 @@ function AdminProductForm() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:5000/api/v1/products/", requestOptions)
+    fetch("https://gibil-server.herokuapp.com/api/v1/products/", requestOptions)
       .then((response) => response.json())
       .then((result) => history.push("/adminproducts"))
       .catch((error) => console.log("error", error));

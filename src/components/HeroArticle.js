@@ -16,7 +16,9 @@ function HeroArticle({ banner, item }) {
   }, [id]);
 
   const fetchRecommendation = async () => {
-    const data = await fetch("http://localhost:5000/api/v1/article/");
+    const data = await fetch(
+      "https://gibil-server.herokuapp.com/api/v1/article/"
+    );
     const items = await data.json();
     const itemsFilter = items.article.filter((item) => item._id !== id);
     setRecommendation(itemsFilter);

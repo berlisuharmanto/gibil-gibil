@@ -42,7 +42,7 @@ function UserEditForm({ user }) {
         redirect: "follow",
       };
 
-      fetch("http://localhost:5000/api/v1/edit", requestOptions)
+      fetch("https://gibil-server.herokuapp.com/api/v1/edit", requestOptions)
         .then((response) => response.json())
         .then((result) => {
           localStorage.setItem("name", name);

@@ -36,7 +36,7 @@ function AdminArticleForm({ item }) {
     };
 
     fetch(
-      `http://localhost:5000/api/v1/article/edit/${item._id}`,
+      `https://gibil-server.herokuapp.com/api/v1/article/edit/${item._id}`,
       requestOptions
     )
       .then((response) => response.text())
@@ -67,7 +67,7 @@ function AdminArticleForm({ item }) {
       redirect: "follow",
     };
 
-    fetch("http://localhost:5000/api/v1/article/", requestOptions)
+    fetch("https://gibil-server.herokuapp.com/api/v1/article/", requestOptions)
       .then((response) => response.json())
       .then((result) => history.push("/adminarticles"))
       .catch((error) => console.log("error", error));

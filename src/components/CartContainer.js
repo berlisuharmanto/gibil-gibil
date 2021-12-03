@@ -29,7 +29,10 @@ function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
         redirect: "follow",
       };
 
-      fetch("http://localhost:5000/api/v1/cart/update", requestOptions)
+      fetch(
+        "https://gibil-server.herokuapp.com/api/v1/cart/update",
+        requestOptions
+      )
         .then((response) => response.text())
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
@@ -57,7 +60,10 @@ function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
         redirect: "follow",
       };
 
-      fetch("http://localhost:5000/api/v1/cart/update", requestOptions)
+      fetch(
+        "https://gibil-server.herokuapp.com/api/v1/cart/update",
+        requestOptions
+      )
         .then((response) => response.text())
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
@@ -80,7 +86,10 @@ function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
       redirect: "follow",
     };
 
-    fetch("http://localhost:5000/api/v1/cart/delete", requestOptions)
+    fetch(
+      "https://gibil-server.herokuapp.com/api/v1/cart/delete",
+      requestOptions
+    )
       .then((response) => response.json())
       .then((result) => window.location.reload())
       .catch((error) => console.log("error", error));

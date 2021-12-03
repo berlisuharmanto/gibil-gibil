@@ -40,7 +40,9 @@ function Navbar() {
 
   const fetchUser = async () => {
     const data = await fetch(
-      `http://localhost:5000/api/v1/user/${localStorage.getItem("id")}`,
+      `https://gibil-server.herokuapp.com/api/v1/user/${localStorage.getItem(
+        "id"
+      )}`,
       requestOptions
     );
     const userData = await data.json();

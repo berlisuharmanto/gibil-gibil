@@ -39,7 +39,9 @@ function CartItem({ item }) {
 
   const fetchUser = async () => {
     const data = await fetch(
-      `http://localhost:5000/api/v1/user/${localStorage.getItem("id")}`,
+      `https://gibil-server.herokuapp.com/api/v1/user/${localStorage.getItem(
+        "id"
+      )}`,
       requestOptions
     );
     const userData = await data.json();
@@ -48,7 +50,7 @@ function CartItem({ item }) {
 
   const fetchItems = async () => {
     const data = await fetch(
-      "http://localhost:5000/api/v1/products/",
+      "https://gibil-server.herokuapp.com/api/v1/products/",
       requestOptions
     );
     const items = await data.json();
@@ -91,7 +93,10 @@ function CartItem({ item }) {
         redirect: "follow",
       };
 
-      fetch("http://localhost:5000/api/v1/products/buy", requestOptions)
+      fetch(
+        "https://gibil-server.herokuapp.com/api/v1/products/buy",
+        requestOptions
+      )
         .then((response) => response.json())
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
@@ -112,7 +117,10 @@ function CartItem({ item }) {
         redirect: "follow",
       };
 
-      fetch("http://localhost:5000/api/v1/cart/clear", requestOptions)
+      fetch(
+        "https://gibil-server.herokuapp.com/api/v1/cart/clear",
+        requestOptions
+      )
         .then((response) => response.json())
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
@@ -541,7 +549,10 @@ function CartItem({ item }) {
         redirect: "follow",
       };
 
-      fetch("http://localhost:5000/api/v1/products/buy", requestOptions)
+      fetch(
+        "https://gibil-server.herokuapp.com/api/v1/products/buy",
+        requestOptions
+      )
         .then((response) => response.json())
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
@@ -562,7 +573,10 @@ function CartItem({ item }) {
         redirect: "follow",
       };
 
-      fetch("http://localhost:5000/api/v1/cart/clear", requestOptions)
+      fetch(
+        "https://gibil-server.herokuapp.com/api/v1/cart/clear",
+        requestOptions
+      )
         .then((response) => response.json())
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));

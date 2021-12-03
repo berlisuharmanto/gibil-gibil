@@ -16,7 +16,9 @@ function AdminProducts() {
   const [accessories, setAccessories] = useState([]);
 
   const fetchFeatured = async () => {
-    const data = await fetch("http://localhost:5000/api/v1/products/");
+    const data = await fetch(
+      "https://gibil-server.herokuapp.com/api/v1/products/"
+    );
     const items = await data.json();
     const itemsFilter = items.products.filter(
       (item) => item.type === "Accessories"
@@ -28,7 +30,9 @@ function AdminProducts() {
   const [item, setItem] = useState([]);
 
   const fetchItems = async () => {
-    const data = await fetch("http://localhost:5000/api/v1/products/");
+    const data = await fetch(
+      "https://gibil-server.herokuapp.com/api/v1/products/"
+    );
     const items = await data.json();
   };
   return (

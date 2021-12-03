@@ -15,7 +15,9 @@ function EditArticle() {
   const [item, setItem] = useState({});
 
   const fetchItems = async () => {
-    const fetchItem = await fetch(`http://localhost:5000/api/v1/article/${id}`);
+    const fetchItem = await fetch(
+      `https://gibil-server.herokuapp.com/api/v1/article/${id}`
+    );
     const item = await fetchItem.json();
 
     setItem(item.data);
