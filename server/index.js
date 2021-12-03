@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const apiPort = 5000;
+const apiPort = process.env.PORT || 5000;
 
 const connectDB = require("./lib/db/connect");
 const userRouter = require("./routes/user");

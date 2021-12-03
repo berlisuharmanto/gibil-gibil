@@ -15,7 +15,7 @@ function HeroCard() {
 
   const fetchItems = async () => {
     const data = await fetch(
-      "http://localhost:5000/api/v1/products/",
+      "https://gibil-server.herokuapp.com/api/v1/products/",
       requestOptions
     );
     const items = await data.json();
