@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./FormSignUp.css";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function FormSignUp({
   img,
   title1,
   NameLabel,
   EmailLabel,
-  PhoneNumber,
+  Address,
   passLabel,
   passConfirmation,
   button1,
@@ -17,21 +17,19 @@ function FormSignUp({
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const [passConfirm, setPasswordConfirmation] = useState("");
 
-  const handleLogin = (e) => {
+  const register = (e) => {
     e.preventDefault();
 
     if (name === "") {
       alert("Name is required");
     } else if (email === "") {
       alert("Email is required");
-    } else if (phoneNumber === "") {
-      alert("Phone Number is required");
-    } else if (phoneNumber.length < 9) {
-      alert("Phone Number at least 10 character");
+    } else if (address === "") {
+      alert("Address is required");
     } else if (password === "") {
       alert("Password is required");
     } else if (password.length < 7) {
@@ -41,7 +39,33 @@ function FormSignUp({
     } else if (password !== passConfirm) {
       alert("Password and Password Confirmation doesn't match");
     } else {
-      history.push("/Home");
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const raw = JSON.stringify({
+        email,
+        plainPassword: password,
+        name,
+        address,
+      });
+
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch("http://localhost:5000/api/v1/register", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          const { id, name, token } = result;
+          localStorage.setItem("id", id);
+          localStorage.setItem("name", name);
+          localStorage.setItem("token", token);
+          history.push("/");
+        })
+        .catch((error) => console.log("error", error));
     }
   };
   return (
@@ -52,7 +76,7 @@ function FormSignUp({
           <b className="title1">{title1}</b>
         </div>
         <div className="CardForm">
-          <form onSubmit={(e) => handleLogin(e)}>
+          <form onSubmit={(e) => register(e)}>
             <label>{NameLabel}</label>
             <input
               type="text"
@@ -67,13 +91,13 @@ function FormSignUp({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label>{PhoneNumber}</label>
+            <label>{Address}</label>
             <input
               type="tel"
               name="Phone Number"
               max="13"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
             ></input>
             <label>{passLabel}</label>
             <input
@@ -90,7 +114,7 @@ function FormSignUp({
               onChange={(e) => setPasswordConfirmation(e.target.value)}
             />
             <div className="Terms">
-              <input className="check-box" type="checkbox" />
+              <input className="check-box" type="checkbox" required />
               <label for="Agreement">
                 I agree with the terms and conditions
               </label>

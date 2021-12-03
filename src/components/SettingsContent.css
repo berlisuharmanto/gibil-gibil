@@ -1,0 +1,137 @@
+.title {
+  font-size: 32px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 65px;
+  margin-left: 85px;
+  margin-right: 155px;
+}
+
+.content table tr:first-child {
+  border-bottom: 1px solid #828282;
+}
+
+.content table tr {
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.content table tr td {
+  padding: 20px 0px 20px 0px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.content .edit {
+  text-align: end;
+}
+
+.content table tr td a {
+  color: gray;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  padding-right: 20px;
+}
+
+.content .payment_method {
+  padding-right: 20px;
+}
+
+.content .payment_text {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.content .no_account {
+  color: #cacaca;
+  display: inline;
+  float: right;
+  text-align: right;
+  font-weight: normal;
+  border: 1px solid #a5a6f6;
+  padding: 0px 80px;
+}
+
+.content img {
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.content .logout {
+  text-align: right;
+  margin-top: 20%;
+  margin-bottom: 5%;
+}
+
+.content .button {
+  border: 1px solid red;
+  border-radius: 10px;
+  color: red;
+  background-color: white;
+  font-size: 20px;
+  padding: 15px 40px 15px 40px;
+}
+
+.content .button:hover {
+  background-color: red;
+  color: white;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.modal-buttons .yes-button {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  border: 1px solid red;
+  border-radius: 10px;
+  cursor: pointer;
+  color: red;
+  background-color: white;
+  font-size: 20px;
+  padding: 15px 40px 15px 40px;
+}
+
+.modal-buttons .yes-button:hover {
+  border: 1px solid red;
+  border-radius: 10px;
+  color: #fff;
+  background-color: red;
+  font-size: 20px;
+  padding: 15px 40px 15px 40px;
+}
+
+.modal-buttons .no-button {
+  display: flex;
+  width: 150px;
+  height: 50px;
+  place-items: center;
+  justify-content: center;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #7879f1;
+  font-size: 20px;
+  padding: 15px 40px 15px 40px;
+}
+
+.modal-buttons .no-button:hover {
+  border-radius: 10px;
+  color: #fff;
+  background-color: #5d5fef;
+  font-size: 20px;
+  padding: 15px 40px 15px 40px;
+}

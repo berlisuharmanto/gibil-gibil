@@ -86,3 +86,9 @@
 #button:hover {
   background-color: #5d5fef;
 }
+
+@media screen and (max-width: 1366px) {
+  .hero-sign-up {
+    height: 100%;
+  }
+}

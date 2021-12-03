@@ -1,14 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router";
 import "./CartItemButton.css";
 function CartItemButton() {
+  let history = useHistory();
+
   return (
     <>
       <div className="container-button-cart">
         <div className="container-cart-btn">
-          <button>
-            <h1>Check All</h1>
-          </button>
-          <button>
+          <button onClick={() => history.push("/paymentdetails")}>
             <h1>Check Out</h1>
           </button>
         </div>

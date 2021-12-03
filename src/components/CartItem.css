@@ -1,15 +1,26 @@
+.container_box {
+  margin-bottom: 30px;
+}
+
 .container-items {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
+}
+
+.container-items .title {
+  text-align: left;
+  width: 1050px;
+  border-bottom: 3px solid #5d5fef;
+  margin: 30px 0;
 }
 
 .container-form .container_box {
   display: flex;
   flex-direction: row;
   width: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .container-checkbox {
@@ -22,8 +33,11 @@
   width: 32px;
   height: 32px;
 }
-.container-image img {
-  width: 175px;
+.container-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
   height: 135px;
 }
 .container-descrip {
@@ -98,6 +112,40 @@
 .container-remove img {
   width: 36px;
   height: 40px;
+}
+
+.container-items .button-proceed {
+  width: 125px;
+  height: 55px;
+  color: #fff;
+  background-color: #7879f1;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.container-items .button-cancel {
+  width: 125px;
+  height: 55px;
+  color: #ff0000;
+  background-color: #fff;
+  border: 1px solid #ff0000;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 60px;
+  cursor: pointer;
+}
+
+.container-items .button-proceed:hover {
+  background-color: #5d5fef;
+}
+
+.container-items .button-cancel:hover {
+  background-color: #ff0000;
+  color: #fff;
 }
 
 .container-amount .amount-number {

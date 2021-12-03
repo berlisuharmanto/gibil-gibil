@@ -28,9 +28,40 @@ function FormSignIn({
     } else if (password.length < 7) {
       alert("Password at least 8 character");
     } else {
-      history.push("/Home");
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const raw = JSON.stringify({
+        email,
+        password,
+      });
+
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch("http://localhost:5000/api/v1/login", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          if (result === "Invalid user") {
+            console.log(result);
+            alert(result);
+            return null;
+          }
+
+          const { id, name, token } = result;
+          localStorage.setItem("id", id);
+          localStorage.setItem("name", name);
+          localStorage.setItem("token", token);
+          history.push("/");
+        })
+        .catch((error) => console.log("error", error));
     }
   };
+
   return (
     <>
       <div className="hero-sign-in">
