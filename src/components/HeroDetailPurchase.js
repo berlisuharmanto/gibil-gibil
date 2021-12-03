@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
 import formatK from "./actions/kFormatter";
 import "./HeroDetailPurchase.css";
 
@@ -17,10 +16,9 @@ function HeroDetailPurchase({ item, specs }) {
               <h2>Rp. {item?.price ? formatK(item?.price) : 0}</h2>
               <p>{item?.prodDesc}</p>
               <h3>Features</h3>
-              <p>{specs[0]}</p>
-              <p>{specs[1]}</p>
-              <p>{specs[2]}</p>
-              <p>{specs[3]}</p>
+              {specs.map((spec) => (
+                <p key={spec.id}>{spec}</p>
+              ))}
             </div>
           </div>
         </div>
