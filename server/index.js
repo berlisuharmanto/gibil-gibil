@@ -30,13 +30,6 @@ app.use("/api/v1/cart", cartsRouter);
 app.use(notFoundMiddleware);
 app.use(errorMiddleware);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "build", "index.html"));
-  });
-}
-
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
