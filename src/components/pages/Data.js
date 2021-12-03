@@ -61,7 +61,7 @@ export const FormObject1 = {
   passLabel: "Password",
   button1: "Sign In",
   button2: "Create Account",
-  logo: "images/logo.png",
+  logo: "images/Logo.png",
 };
 
 export const FormObject2 = {
