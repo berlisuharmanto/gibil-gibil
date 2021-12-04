@@ -21,6 +21,7 @@ import AdminArticles from "./components/pages/AdminArticles";
 import AddArticle from "./components/pages/AddArticle";
 import EditArticle from "./components/pages/EditArticle";
 import AddProduct from "./components/pages/AddProduct";
+import EditProduct from "./components/pages/EditProduct";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/admin-add-article" exact component={AddArticle} />
         <Route path="/adminarticles/:id" component={EditArticle} />
         <Route path="/admin-add-product" exact component={AddProduct} />
+        <Route path="/adminproducts/:id" component={EditProduct} />
       </Switch>
       <Footer />
     </Router>

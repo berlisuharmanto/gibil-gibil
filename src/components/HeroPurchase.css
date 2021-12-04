@@ -2,13 +2,54 @@
   display: flex;
   justify-content: center;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .hero_purchase_container {
   display: flex;
   flex-direction: column;
   width: 40%;
+}
+
+.hero_purchase_container .card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.hero_purchase_container .card-container .button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  margin-left: 120px;
+}
+
+.hero_purchase_container .card-container .button-container button {
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px #000;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero_purchase_container .card-container .button-container button img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero_purchase_container .card-container a {
+  text-decoration: none;
+  color: #000;
+}
+
+.hero_purchase_container .card-container:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hero_purchase_header {
@@ -43,10 +84,18 @@
   display: flex;
 }
 
-.hero_purchase_list .img-container {
+.hero_purchase_container .img-container {
+  margin-bottom: 30px;
+  width: 100%;
+  max-height: 135px;
+}
+
+.hero_purchase_container .img-container img {
+  display: flex;
   position: relative;
   margin: 15px 15px 15px 0;
-  height: 112px;
+  width: 100%;
+  height: 100%;
 }
 
 .hero_purchase_list .img-container .img-hover {

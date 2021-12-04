@@ -5,41 +5,50 @@ import HeroPurchaseBanner from "../HeroPurchaseBanner";
 import { purchaseBanner } from "./Data";
 
 function AdminProducts() {
-  useEffect(() => {
-    fetchItems();
-    fetchFeatured();
-  }, []);
-
   const accHeaders = "Accessories";
   const mediaHeaders = "Media";
 
-  const [accessories, setAccessories] = useState([]);
+  useEffect(() => {
+    fetchAccessories();
+    fetchMedia();
+  }, []);
 
-  const fetchFeatured = async () => {
-    const data = await fetch(
-      "https://gibil-server.herokuapp.com/api/v1/products/"
-    );
-    const items = await data.json();
-    const itemsFilter = items.products.filter(
-      (item) => item.type === "Accessories"
-    );
+  const [Accessories, setAccessories] = useState([]);
+  const [Medias, setMedias] = useState([]);
 
-    setAccessories(itemsFilter);
+  const requestOptions = {
+    method: "GET",
   };
 
-  const [item, setItem] = useState([]);
+  const AccHeaders = "Accessories";
+  const MedHeaders = "Medias";
 
-  const fetchItems = async () => {
+  const fetchAccessories = async () => {
     const data = await fetch(
-      "https://gibil-server.herokuapp.com/api/v1/products/"
+      "https://gibil-server.herokuapp.com/api/v1/products/",
+      requestOptions
     );
     const items = await data.json();
+    const featured = items.products.filter(
+      (item) => item.type === "Accessories"
+    );
+    setAccessories(featured);
+  };
+
+  const fetchMedia = async () => {
+    const data = await fetch(
+      "https://gibil-server.herokuapp.com/api/v1/products/",
+      requestOptions
+    );
+    const items = await data.json();
+    const featured = items.products.filter((item) => item.type === "Media");
+    setMedias(featured);
   };
   return (
     <>
       <HeroPurchaseBanner {...purchaseBanner} />
-      <HeroPurchase header={accHeaders} />
-      <HeroPurchase header={mediaHeaders} />
+      <HeroPurchase headers={AccHeaders} items={Accessories} />
+      <HeroPurchase headers={MedHeaders} items={Medias} />
       <AddButton />
     </>
   );

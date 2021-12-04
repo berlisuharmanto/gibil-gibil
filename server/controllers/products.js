@@ -77,8 +77,16 @@ const createProduct = async (req, res) => {
 };
 
 const updateProduct = async (req, res) => {
-  const { name, price, numOfProducts, prodImage, prodBg, prodDesc, prodSpec } =
-    req.body;
+  const {
+    name,
+    price,
+    numOfProducts,
+    prodImage,
+    prodBg,
+    prodDesc,
+    prodSpec,
+    type,
+  } = req.body;
 
   const product = await Products.findByIdAndUpdate(
     req.params._id,
@@ -90,6 +98,7 @@ const updateProduct = async (req, res) => {
       prodBg,
       prodDesc,
       prodSpec,
+      type,
     },
     { new: true }
   );

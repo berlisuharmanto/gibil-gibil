@@ -1,14 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroPurchase from "../HeroPurchase";
 import HeroPurchaseBanner from "../HeroPurchaseBanner";
-import { accessories, medias, purchaseBanner } from "./Data";
+import { medias, purchaseBanner } from "./Data";
 
 function Purchase() {
+  useEffect(() => {
+    fetchAccessories();
+    fetchMedia();
+  }, []);
+  const [Accessories, setAccessories] = useState([]);
+  const [Medias, setMedias] = useState([]);
+
+  const requestOptions = {
+    method: "GET",
+  };
+
+  const AccHeaders = "Accessories";
+  const MedHeaders = "Medias";
+
+  const fetchAccessories = async () => {
+    const data = await fetch(
+      "https://gibil-server.herokuapp.com/api/v1/products/",
+      requestOptions
+    );
+    const items = await data.json();
+    const featured = items.products.filter(
+      (item) => item.type === "Accessories"
+    );
+    setAccessories(featured);
+  };
+
+  const fetchMedia = async () => {
+    const data = await fetch(
+      "https://gibil-server.herokuapp.com/api/v1/products/",
+      requestOptions
+    );
+    const items = await data.json();
+    const featured = items.products.filter((item) => item.type === "Media");
+    setMedias(featured);
+  };
   return (
     <>
       <HeroPurchaseBanner {...purchaseBanner} />
-      <HeroPurchase {...accessories} />
-      <HeroPurchase {...medias} />
+      <HeroPurchase headers={AccHeaders} items={Accessories} />
+      <HeroPurchase headers={MedHeaders} items={Medias} />
     </>
   );
 }

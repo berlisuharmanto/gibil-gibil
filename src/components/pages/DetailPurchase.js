@@ -3,7 +3,6 @@ import { useParams } from "react-router";
 import HeroDetailPurchase from "../HeroDetailPurchase";
 import HeroRecomendation from "../HeroRecomendation";
 import HeroVariation from "../HeroVariation";
-import { variation } from "./Data";
 
 function DetailPurchase() {
   const { id } = useParams();
