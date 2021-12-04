@@ -3,6 +3,10 @@ import CartItem from "../CartItem";
 import CartItemButton from "../CartItemButton";
 import EmptyCart from "../EmptyCart";
 import { cartIcon, emptyCart } from "./Data";
+import useLoading from "../actions/useLoading";
+import Loading from "../Loading";
+import NotAuthorize from "../NotAuthorize";
+import Auth from "../actions/Auth";
 
 function Cart() {
   useEffect(() => {
@@ -26,7 +30,15 @@ function Cart() {
     setItems(featured);
   };
 
-  if (items.length === 0) {
+  const loadingPage = useLoading();
+
+  const [login, admin] = Auth();
+
+  if (loadingPage) {
+    return <Loading />;
+  } else if (!login) {
+    return <NotAuthorize />;
+  } else if (items.length === 0) {
     return (
       <>
         <EmptyCart {...emptyCart} />

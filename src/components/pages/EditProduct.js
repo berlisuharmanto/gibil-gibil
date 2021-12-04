@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import AdminProductForm from "../AdminProductForm";
+import useLoading from "../actions/useLoading";
+import Loading from "../Loading";
+import Auth from "../actions/Auth";
+import NotAuthorize from "../NotAuthorize";
 
 function EditProduct() {
   const { id } = useParams();
@@ -21,6 +25,15 @@ function EditProduct() {
     const item = await fetchItem.json();
     setItem(item.data);
   };
+  const loadingPage = useLoading();
+
+  const [login, admin] = Auth();
+
+  if (loadingPage) {
+    return <Loading />;
+  } else if (!login && !admin) {
+    return <NotAuthorize />;
+  }
   return (
     <>
       <AdminProductForm item={item} key={item._id} />

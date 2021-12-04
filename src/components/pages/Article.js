@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { articleContent } from "./Data";
 import { useParams } from "react-router";
+import useLoading from "../actions/useLoading";
+import Loading from "../Loading";
 import HeroArticle from "../HeroArticle";
 
 function Article() {
@@ -24,8 +26,10 @@ function Article() {
     setItem(item.data);
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
+  const loadingPage = useLoading();
+
+  if (loadingPage) {
+    return <Loading />;
   }
 
   return (

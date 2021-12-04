@@ -4,8 +4,6 @@ import { useHistory } from "react-router";
 function SliderContainer({ item }) {
   let history = useHistory();
 
-  console.log(item._id);
-
   const removeItem = () => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");

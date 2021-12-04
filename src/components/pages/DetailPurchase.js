@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 import HeroDetailPurchase from "../HeroDetailPurchase";
 import HeroRecomendation from "../HeroRecomendation";
 import HeroVariation from "../HeroVariation";
+import useLoading from "../actions/useLoading";
+import Loading from "../Loading";
 
 function DetailPurchase() {
   const { id } = useParams();
@@ -40,8 +42,10 @@ function DetailPurchase() {
     setRecommendation(itemsFilter);
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
+  const loadingPage = useLoading();
+
+  if (loadingPage) {
+    return <Loading />;
   }
 
   return (

@@ -3,6 +3,8 @@ import HeroBundleBanner from "../HeroBundleBanner";
 import HeroCard from "../HeroCard";
 import { bundleBanner } from "./Data";
 import Styled from "styled-components";
+import useLoading from "../actions/useLoading";
+import Loading from "../Loading";
 
 function Bundle() {
   const CardMain = Styled.div`
@@ -11,6 +13,12 @@ function Bundle() {
       transform: scale(0.8);
   }
   `;
+
+  const loadingPage = useLoading();
+
+  if (loadingPage) {
+    return <Loading />;
+  }
 
   return (
     <>

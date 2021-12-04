@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import CartItem from "../CartItem";
+import useLoading from "../actions/useLoading";
+import Loading from "../Loading";
+import NotAuthorize from "../NotAuthorize";
+import Auth from "../actions/Auth";
 
 function PaymentDetails() {
   useEffect(() => {
@@ -22,6 +26,15 @@ function PaymentDetails() {
     );
     setItems(featured);
   };
+  const loadingPage = useLoading();
+
+  const [login, admin] = Auth();
+
+  if (loadingPage) {
+    return <Loading />;
+  } else if (!login) {
+    return <NotAuthorize />;
+  }
   return (
     <>
       <div style={{ minHeight: "55vh" }}>

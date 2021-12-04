@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import HeroPurchase from "../HeroPurchase";
 import HeroPurchaseBanner from "../HeroPurchaseBanner";
 import { medias, purchaseBanner } from "./Data";
+import useLoading from "../actions/useLoading";
+import Loading from "../Loading";
 
 function Purchase() {
   useEffect(() => {
@@ -39,6 +41,11 @@ function Purchase() {
     const featured = items.products.filter((item) => item.type === "Media");
     setMedias(featured);
   };
+  const loadingPage = useLoading();
+
+  if (loadingPage) {
+    return <Loading />;
+  }
   return (
     <>
       <HeroPurchaseBanner {...purchaseBanner} />

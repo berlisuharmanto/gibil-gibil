@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import AddButton from "../AddButton";
 import HeroPurchase from "../HeroPurchase";
 import HeroPurchaseBanner from "../HeroPurchaseBanner";
+import useLoading from "../actions/useLoading";
+import Loading from "../Loading";
 import { purchaseBanner } from "./Data";
+import Auth from "../actions/Auth";
+import NotAuthorize from "../NotAuthorize";
 
 function AdminProducts() {
   const accHeaders = "Accessories";
@@ -44,6 +48,17 @@ function AdminProducts() {
     const featured = items.products.filter((item) => item.type === "Media");
     setMedias(featured);
   };
+
+  const loadingPage = useLoading();
+
+  const [login, admin] = Auth();
+
+  if (loadingPage) {
+    return <Loading />;
+  } else if (!login && !admin) {
+    return <NotAuthorize />;
+  }
+
   return (
     <>
       <HeroPurchaseBanner {...purchaseBanner} />

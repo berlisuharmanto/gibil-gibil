@@ -3,6 +3,8 @@ import HeroTrendBanner from "../HeroTrendBanner";
 import HeroSlider from "../HeroSlider";
 import { trendBanner } from "./Data";
 import HeroCarousel from "../HeroCarousel";
+import useLoading from "../actions/useLoading";
+import Loading from "../Loading";
 
 function Trend() {
   useEffect(() => {
@@ -32,6 +34,11 @@ function Trend() {
     const items = await data.json();
     setItem(items.article);
   };
+  const loadingPage = useLoading();
+
+  if (loadingPage) {
+    return <Loading />;
+  }
   return (
     <div>
       <HeroTrendBanner {...trendBanner} />
