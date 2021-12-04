@@ -60,7 +60,7 @@
   opacity: 1;
 }
 
-@media screen and (max-width: 1366px) {
+/* @media screen and (max-width: 1366px) {
   .hero_carousel_container-01 .carousel-slider {
     height: 240px;
   }
@@ -74,4 +74,4 @@
     width: 70px;
     height: 20px;
   }
-}
+} */

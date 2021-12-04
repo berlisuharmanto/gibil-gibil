@@ -304,6 +304,7 @@ function CartItem({ item }) {
                   }}
                 >
                   <button
+                    onClick={() => history.push("/edit")}
                     style={{
                       backgroundColor: "#fff",
                       border: "none",
@@ -313,6 +314,7 @@ function CartItem({ item }) {
                       float: "right",
                     }}
                   >
+                    {" "}
                     Edit{" "}
                     <img
                       style={{ paddingLeft: "17px" }}

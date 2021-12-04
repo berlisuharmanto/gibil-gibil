@@ -54,7 +54,7 @@ function Navbar() {
       position: "fixed",
       display: "flex",
       flexDirection: "column",
-      top: "8%",
+      top: "80px",
       left: "80%",
       right: "auto",
       bottom: "auto",
@@ -62,7 +62,7 @@ function Navbar() {
       transform: "translate(-50%, -50%)",
       borderRadius: "10px",
       transform: "rotate(360deg)",
-      zIndex: "2",
+      zIndex: "3",
     },
     overlay: { background: "none" },
   };

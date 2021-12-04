@@ -24,7 +24,7 @@
   flex-direction: column;
   justify-content: flex-end;
   position: absolute;
-  margin-left: 120px;
+  margin-left: 70px;
 }
 
 .hero_purchase_container .card-container .button-container button {
@@ -137,7 +137,7 @@
 .hero_purchase_container .carousel .control-dots {
   margin-bottom: 0;
 }
-
+/* 
 @media screen and (max-width: 1366px) {
   .hero_purchase_list {
     height: 230px;
@@ -146,4 +146,4 @@
   .hero_purchase_list .img-container {
     height: 75px;
   }
-}
+} */
