@@ -81,18 +81,6 @@ function UserEditForm({ user }) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            name="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </div>
-        <div className="form-group">
           <label htmlFor="">Address</label>
           <input
             type="text"
