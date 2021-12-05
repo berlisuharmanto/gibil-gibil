@@ -4,6 +4,7 @@ function Auth() {
   const [user, setUser] = React.useState({});
   const [login, setLogin] = React.useState(localStorage.getItem("token"));
   const [admin, setAdmin] = React.useState(false);
+  const [id, setId] = React.useState(localStorage.getItem("id"));
 
   const requestOptions = {
     method: "GET",
@@ -25,7 +26,11 @@ function Auth() {
   }, [localStorage.getItem("token")]);
 
   useEffect(() => {
-    fetchUser();
+    if (id) {
+      fetchUser();
+    } else {
+      setUser({});
+    }
     setAdmin(user.isAdmin);
   }, [user.isAdmin === true]);
 
