@@ -67,6 +67,7 @@ function FormSignUp({
           localStorage.setItem("name", name);
           localStorage.setItem("token", token);
           history.push("/");
+          window.location.reload();
         })
         .catch((error) => console.log("error", error));
     }

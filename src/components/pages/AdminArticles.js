@@ -45,7 +45,10 @@ function AdminArticles() {
     return <Loading />;
   } else if (!login && !admin) {
     return <NotAuthorize />;
+  } else if (login && !admin) {
+    return <NotAuthorize />;
   }
+
   return (
     <div>
       <HeroTrendBanner {...trendBanner} />

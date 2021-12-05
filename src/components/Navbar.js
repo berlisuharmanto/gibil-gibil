@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import Modal from "react-modal";
+import useLoading from "./actions/useLoading";
+import Auth from "./actions/Auth";
 
 function Navbar() {
   const location = useLocation();
@@ -9,10 +11,6 @@ function Navbar() {
   const name = localStorage.getItem("name");
 
   console.log(location.pathname);
-
-  const [loading, setLoading] = useState(true);
-
-  const [login, setLogin] = useState(localStorage.getItem("token"));
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -26,28 +24,9 @@ function Navbar() {
     setIsOpen(false);
   }
 
-  useEffect(() => {
-    fetchUser();
-    setLoading(false);
-    setLogin(localStorage.getItem("token"));
-  }, [localStorage.getItem("token")]);
+  const loadingPage = useLoading();
 
-  const requestOptions = {
-    method: "GET",
-  };
-
-  const [user, setUser] = useState({});
-
-  const fetchUser = async () => {
-    const data = await fetch(
-      `https://gibil-server.herokuapp.com/api/v1/user/${localStorage.getItem(
-        "id"
-      )}`,
-      requestOptions
-    );
-    const userData = await data.json();
-    setUser(userData.user);
-  };
+  const [login, admin] = Auth();
 
   const customStyles = {
     content: {
@@ -67,22 +46,14 @@ function Navbar() {
     overlay: { background: "none" },
   };
 
-  if (location.pathname === "/signin" || location.pathname === "/signup") {
+  if (loadingPage) {
     return null;
-  }
-
-  if (loading) {
-    return (
-      <div className="loading">
-        <div className="lds-ellipsis">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    );
-  } else if (!login && !loading) {
+  } else if (
+    location.pathname === "/signin" ||
+    location.pathname === "/signup"
+  ) {
+    return null;
+  } else if (!login) {
     return (
       <>
         <nav>
@@ -164,7 +135,8 @@ function Navbar() {
         </nav>
       </>
     );
-  } else if (user.isAdmin == true && !loading) {
+  } else if (admin && login) {
+    console.log(admin);
     return (
       <>
         <Modal

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 function Auth() {
   const [user, setUser] = React.useState({});
   const [login, setLogin] = React.useState(localStorage.getItem("token"));
-  const [admin, setAdmin] = React.useState();
+  const [admin, setAdmin] = React.useState(false);
 
   const requestOptions = {
     method: "GET",
@@ -18,14 +18,16 @@ function Auth() {
     );
     const userData = await data.json();
     setUser(userData.user);
-    console.log(userData.user.isAdmin);
   };
 
   useEffect(() => {
-    fetchUser();
     setLogin(localStorage.getItem("token"));
-    setAdmin(user.isAdmin);
   }, [localStorage.getItem("token")]);
+
+  useEffect(() => {
+    fetchUser();
+    setAdmin(user.isAdmin);
+  }, [user.isAdmin === true]);
 
   return [login, admin];
 }

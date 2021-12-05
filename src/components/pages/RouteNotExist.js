@@ -10,7 +10,22 @@ function RouteNotExist() {
   }
   return (
     <>
-      <h1>Route not exist</h1>
+      <div
+        className="not-found-page"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "50px 0",
+          width: "100%",
+          height: "100vh",
+        }}
+      >
+        <img
+          src={process.env.PUBLIC_URL + "/images/notFound.png"}
+          alt="Route does not exist"
+        />
+      </div>
     </>
   );
 }

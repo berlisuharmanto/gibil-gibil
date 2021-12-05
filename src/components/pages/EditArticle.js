@@ -35,7 +35,10 @@ function EditArticle() {
     return <Loading />;
   } else if (!login && !admin) {
     return <NotAuthorize />;
+  } else if (login && !admin) {
+    return <NotAuthorize />;
   }
+
   return (
     <>
       <AdminArticleForm item={item} key={item._id} />

@@ -1,11 +1,16 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import useLoading from "./actions/useLoading";
 import "./Footer.css";
 
 function Footer() {
   const location = useLocation();
 
-  if (location.pathname === "/signup") {
+  const loadingPage = useLoading();
+
+  if (loadingPage) {
+    return null;
+  } else if (location.pathname === "/signup") {
     return null;
   }
 
