@@ -5,6 +5,7 @@ import HeroRecomendation from "../HeroRecomendation";
 import HeroVariation from "../HeroVariation";
 import useLoading from "../actions/useLoading";
 import Loading from "../Loading";
+import RouteNotExist from "./RouteNotExist";
 
 function DetailPurchase() {
   const { id } = useParams();
@@ -21,14 +22,20 @@ function DetailPurchase() {
 
   const [specs, setSpecs] = useState([]);
 
+  const [status, setStatus] = useState("");
+
   const fetchItems = async () => {
     const fetchItem = await fetch(
       `https://gibil-server.herokuapp.com/api/v1/products/${id}`
     );
     const item = await fetchItem.json();
 
-    setItem(item.data);
-    setSpecs(item.data.prodSpec);
+    setStatus(item.status);
+
+    if (item.status === "success") {
+      setItem(item.data);
+      setSpecs(item.data.prodSpec);
+    }
   };
 
   const [recommendation, setRecommendation] = useState([]);
@@ -46,8 +53,9 @@ function DetailPurchase() {
 
   if (loadingPage) {
     return <Loading />;
+  } else if (status === "Something wrong, please try again") {
+    return <RouteNotExist />;
   }
-
   return (
     <>
       <HeroDetailPurchase item={item} specs={specs} />

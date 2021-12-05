@@ -5,6 +5,7 @@ import useLoading from "../actions/useLoading";
 import Loading from "../Loading";
 import Auth from "../actions/Auth";
 import NotAuthorize from "../NotAuthorize";
+import RouteNotExist from "./RouteNotExist";
 
 function EditProduct() {
   const { id } = useParams();
@@ -18,12 +19,18 @@ function EditProduct() {
 
   const [item, setItem] = useState({});
 
+  const [status, setStatus] = useState("");
+
   const fetchItems = async () => {
     const fetchItem = await fetch(
       `https://gibil-server.herokuapp.com/api/v1/products/${id}`
     );
     const item = await fetchItem.json();
-    setItem(item.data);
+    setStatus(item.status);
+
+    if (item.status === "success") {
+      setItem(item.data);
+    }
   };
   const loadingPage = useLoading();
 
@@ -35,6 +42,8 @@ function EditProduct() {
     return <NotAuthorize />;
   } else if (login && !admin) {
     return <NotAuthorize />;
+  } else if (status === "Something wrong, please try again") {
+    return <RouteNotExist />;
   }
 
   return (

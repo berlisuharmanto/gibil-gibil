@@ -5,6 +5,7 @@ import useLoading from "../actions/useLoading";
 import CartItem from "../CartItem";
 import Loading from "../Loading";
 import NotAuthorize from "../NotAuthorize";
+import RouteNotExist from "./RouteNotExist";
 
 function BuyNow() {
   const { id } = useParams();
@@ -14,6 +15,8 @@ function BuyNow() {
   const loadingPage = useLoading();
 
   const [login, admin] = Auth();
+
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
     fetchItems();
@@ -28,13 +31,19 @@ function BuyNow() {
     );
     const item = await fetchItem.json();
 
-    setItems(item.data);
+    setStatus(item.status);
+
+    if (item.status === "success") {
+      setItems(item.data);
+    }
   };
 
   if (loadingPage) {
     return <Loading />;
   } else if (!login) {
     return <NotAuthorize />;
+  } else if (status === "Something wrong, please try again") {
+    return <RouteNotExist />;
   }
 
   return (
