@@ -1,12 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import formatK from "./actions/kFormatter";
 
 function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
   const [counter, setCounter] = useState(item.quantity);
-  console.log(counter);
 
   const [pricer, setPricer] = useState(item.price * counter);
+
+  useEffect(() => {
+    fetchProd();
+  }, []);
+
+  const [prod, setProd] = useState({});
+
+  const requestOptions = {
+    method: "GET",
+  };
+
+  const fetchProd = async () => {
+    const data = await fetch(
+      `https://gibil-server.herokuapp.com/api/v1/products/${item.prodId}`,
+      requestOptions
+    );
+    const items = await data.json();
+    setProd(items.data);
+  };
 
   const decrement = () => {
     if (counter > 1) {
@@ -40,7 +58,8 @@ function CartContainer({ item, minusIcon, plusIcon, removeIcon }) {
   };
 
   const increment = () => {
-    if (counter < 100) {
+    if (counter < prod.numOfProducts) {
+      console.log(prod.numOfProducts);
       setCounter(counter + 1);
       setPricer(pricer + item.price);
 
