@@ -36,7 +36,6 @@ function SettingsContent({
 
     localStorage.removeItem("name");
     localStorage.removeItem("token");
-    console.log("WHY IS IT NOT WORKING???????");
     history.push("/");
   };
 
