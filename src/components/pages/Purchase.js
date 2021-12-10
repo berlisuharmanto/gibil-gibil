@@ -27,7 +27,7 @@ function Purchase() {
     );
     const items = await data.json();
     const featured = items.products.filter(
-      (item) => item.type === "Accessories"
+      (item) => item.type === "Accessories" && item.numOfProducts > 0
     );
     setAccessories(featured);
   };
@@ -38,7 +38,9 @@ function Purchase() {
       requestOptions
     );
     const items = await data.json();
-    const featured = items.products.filter((item) => item.type === "Media");
+    const featured = items.products.filter(
+      (item) => item.type === "Media" && item.numOfProducts > 0
+    );
     setMedias(featured);
   };
   const loadingPage = useLoading();

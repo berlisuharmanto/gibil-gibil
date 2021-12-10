@@ -8,6 +8,8 @@ import NotAuthorize from "../NotAuthorize";
 function AddProduct() {
   const loadingPage = useLoading();
 
+  const item = "";
+
   const [login, admin] = Auth();
 
   if (loadingPage) {
@@ -20,7 +22,7 @@ function AddProduct() {
 
   return (
     <>
-      <AdminProductForm />
+      <AdminProductForm item={item} />
     </>
   );
 }
