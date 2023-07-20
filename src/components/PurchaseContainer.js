@@ -17,7 +17,7 @@ function PurchaseContainer({ item }) {
     };
 
     fetch(
-      `https://gibil-server.herokuapp.com/api/v1/products/delete/${item._id}`,
+      `https://gibil-server.vercel.app/api/v1/products/delete/${item._id}`,
       requestOptions
     )
       .then((response) => response.json())

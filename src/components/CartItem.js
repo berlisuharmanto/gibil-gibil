@@ -39,7 +39,7 @@ function CartItem({ item }) {
 
   const fetchUser = async () => {
     const data = await fetch(
-      `https://gibil-server.herokuapp.com/api/v1/user/${localStorage.getItem(
+      `https://gibil-server.vercel.app/api/v1/user/${localStorage.getItem(
         "id"
       )}`,
       requestOptions
@@ -50,7 +50,7 @@ function CartItem({ item }) {
 
   const fetchItems = async () => {
     const data = await fetch(
-      "https://gibil-server.herokuapp.com/api/v1/products/",
+      "https://gibil-server.vercel.app/api/v1/products/",
       requestOptions
     );
     const items = await data.json();
@@ -94,7 +94,7 @@ function CartItem({ item }) {
       };
 
       fetch(
-        "https://gibil-server.herokuapp.com/api/v1/products/buy",
+        "https://gibil-server.vercel.app/api/v1/products/buy",
         requestOptions
       )
         .then((response) => response.json())
@@ -118,7 +118,7 @@ function CartItem({ item }) {
       };
 
       fetch(
-        "https://gibil-server.herokuapp.com/api/v1/cart/clear",
+        "https://gibil-server.vercel.app/api/v1/cart/clear",
         requestOptions
       )
         .then((response) => response.json())
@@ -552,7 +552,7 @@ function CartItem({ item }) {
       };
 
       fetch(
-        "https://gibil-server.herokuapp.com/api/v1/products/buy",
+        "https://gibil-server.vercel.app/api/v1/products/buy",
         requestOptions
       )
         .then((response) => response.json())
@@ -576,7 +576,7 @@ function CartItem({ item }) {
       };
 
       fetch(
-        "https://gibil-server.herokuapp.com/api/v1/cart/clear",
+        "https://gibil-server.vercel.app/api/v1/cart/clear",
         requestOptions
       )
         .then((response) => response.json())

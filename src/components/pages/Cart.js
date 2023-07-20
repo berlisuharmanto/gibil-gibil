@@ -20,7 +20,7 @@ function Cart() {
 
   const fetchItems = async () => {
     const data = await fetch(
-      "https://gibil-server.herokuapp.com/api/v1/cart/",
+      "https://gibil-server.vercel.app/api/v1/cart/",
       requestOptions
     );
     const items = await data.json();

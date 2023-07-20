@@ -23,7 +23,7 @@ function EditArticle() {
 
   const fetchItems = async () => {
     const fetchItem = await fetch(
-      `https://gibil-server.herokuapp.com/api/v1/article/${id}`
+      `https://gibil-server.vercel.app/api/v1/article/${id}`
     );
     const item = await fetchItem.json();
 

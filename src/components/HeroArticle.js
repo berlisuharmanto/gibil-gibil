@@ -17,7 +17,7 @@ function HeroArticle({ banner, item }) {
 
   const fetchRecommendation = async () => {
     const data = await fetch(
-      "https://gibil-server.herokuapp.com/api/v1/article/"
+      "https://gibil-server.vercel.app/api/v1/article/"
     );
     const items = await data.json();
     const itemsFilter = items.article.filter((item) => item._id !== id);

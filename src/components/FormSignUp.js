@@ -57,7 +57,7 @@ function FormSignUp({
       };
 
       fetch(
-        "https://gibil-server.herokuapp.com/api/v1/register",
+        "https://gibil-server.vercel.app/api/v1/register",
         requestOptions
       )
         .then((response) => response.json())

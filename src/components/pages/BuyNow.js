@@ -27,7 +27,7 @@ function BuyNow() {
 
   const fetchItems = async () => {
     const fetchItem = await fetch(
-      `https://gibil-server.herokuapp.com/api/v1/products/${id}`
+      `https://gibil-server.vercel.app/api/v1/products/${id}`
     );
     const item = await fetchItem.json();
 

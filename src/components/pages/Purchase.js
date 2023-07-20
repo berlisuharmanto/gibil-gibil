@@ -22,7 +22,7 @@ function Purchase() {
 
   const fetchAccessories = async () => {
     const data = await fetch(
-      "https://gibil-server.herokuapp.com/api/v1/products/",
+      "https://gibil-server.vercel.app/api/v1/products/",
       requestOptions
     );
     const items = await data.json();
@@ -34,7 +34,7 @@ function Purchase() {
 
   const fetchMedia = async () => {
     const data = await fetch(
-      "https://gibil-server.herokuapp.com/api/v1/products/",
+      "https://gibil-server.vercel.app/api/v1/products/",
       requestOptions
     );
     const items = await data.json();

@@ -26,7 +26,7 @@ function DetailPurchase() {
 
   const fetchItems = async () => {
     const fetchItem = await fetch(
-      `https://gibil-server.herokuapp.com/api/v1/products/${id}`
+      `https://gibil-server.vercel.app/api/v1/products/${id}`
     );
     const item = await fetchItem.json();
 
@@ -42,7 +42,7 @@ function DetailPurchase() {
 
   const fetchRecommendation = async () => {
     const data = await fetch(
-      "https://gibil-server.herokuapp.com/api/v1/products/"
+      "https://gibil-server.vercel.app/api/v1/products/"
     );
     const items = await data.json();
     const itemsFilter = items.products.filter((item) => item._id !== id);

@@ -46,7 +46,7 @@ function AdminProductForm({ item }) {
     };
 
     fetch(
-      `https://gibil-server.herokuapp.com/api/v1/products/update/${item._id}`,
+      `https://gibil-server.vercel.app/api/v1/products/update/${item._id}`,
       requestOptions
     )
       .then((response) => response.text())
@@ -80,7 +80,7 @@ function AdminProductForm({ item }) {
       redirect: "follow",
     };
 
-    fetch("https://gibil-server.herokuapp.com/api/v1/products/", requestOptions)
+    fetch("https://gibil-server.vercel.app/api/v1/products/", requestOptions)
       .then((response) => response.json())
       .then((result) => history.push("/adminproducts"))
       .catch((error) => console.log("error", error));

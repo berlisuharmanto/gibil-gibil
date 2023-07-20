@@ -16,7 +16,7 @@ function Edit() {
   const [user, setUser] = useState({});
   const fetchUser = async () => {
     const data = await fetch(
-      `https://gibil-server.herokuapp.com/api/v1/user/${localStorage.getItem(
+      `https://gibil-server.vercel.app/api/v1/user/${localStorage.getItem(
         "id"
       )}`,
       requestOptions

@@ -16,7 +16,7 @@ function Trend() {
 
   const fetchFeatured = async () => {
     const data = await fetch(
-      "https://gibil-server.herokuapp.com/api/v1/article/"
+      "https://gibil-server.vercel.app/api/v1/article/"
     );
     const featured = await data.json();
     const featuredFilter = featured.article.filter(
@@ -29,7 +29,7 @@ function Trend() {
 
   const fetchItems = async () => {
     const data = await fetch(
-      "https://gibil-server.herokuapp.com/api/v1/article/"
+      "https://gibil-server.vercel.app/api/v1/article/"
     );
     const items = await data.json();
     setItem(items.article);
